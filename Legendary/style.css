@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+main{
+    background-color: #efe784;
+    font-family: "Roboto", sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    width: 960px;
+    height: 350PX;
+    background-image: url("images/logoheader.png"), url("images/header.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-left: 300px;
+}
+
+.bienvenue{
+    letter-spacing: 10px;
+    color: #efe784;
+    text-align: center;
+    
+    
+}

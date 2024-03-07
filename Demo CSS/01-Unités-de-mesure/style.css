@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    margin-top: 50px;
+}
+
+div{
+    /* font-size: 30px; */
+    width: 100%;
+    background-color: blueviolet;
+}
+
+p{
+    border: 5px solid rgb(255, 238, 0);
+    font-size: 2rem;
+}
