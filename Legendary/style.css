@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: #efe784;
+}
+
+main{
+    margin-left: 300px;
+}
+
+header{
+    background-image: url("images/logoheader.png"), url("images/header.jpg");
+    background-repeat: no-repeat;
+    width: 960px;
+    height: 350px;
+    background-position: center;
+}
+
+h1{
+    color: #efe784;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-top: 250px;
+}
+
+.intro{
+    width: 960px;
+    background-color: #3e3838;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.introduction{
+    display: inline;
+    color: #ada55a;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+    letter-spacing: 20px;
+    border-top: 1px solid #ada55a;
+    border-bottom: 1px solid #ada55a;
+}
+
+.paraintro{
+    color: #ada55a;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1em;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.avengers{
+    width: 960px;
+    height: 650px;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 110px;
+    padding-right: 110px;
+    text-align: center;
+    background-image: url("images/avengers.jpg");
+    background-repeat: no-repeat;
+    
+    background-position-x: center;
+    background-position-y: 300px;
+    
+}
