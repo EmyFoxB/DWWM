@@ -1,79 +1,214 @@
-*{
+* {
     box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
-body{
+body {
     background-color: #efe784;
+    font-family: "Roboto", sans-serif;
 }
 
-main{
-    margin-left: 300px;
-}
+header {
 
-header{
-    background-image: url("images/logoheader.png"), url("images/header.jpg");
+    background: url(./images/logoheader.png), url(./images/header.jpg);
     background-repeat: no-repeat;
     width: 960px;
     height: 350px;
     background-position: center;
+    margin: auto;
 }
 
-h1{
+h1 {
+    font-size: 1.5rem;
+    letter-spacing: 22px;
     color: #efe784;
-    font-family: "Roboto", sans-serif;
-    font-weight: lighter;
-    font-size: 2em;
-    letter-spacing: 20px;
-    text-align: center;
-    padding-top: 250px;
+    font-weight: 20;
+    position: absolute;
+    top: 250px;
+    left: 640px;
 }
 
-.intro{
+main {
     width: 960px;
-    background-color: #3e3838;
-    padding-top: 30px;
-    text-align: center;
 }
 
-.introduction{
-    display: inline;
+.intro {
+    position: relative;
+    background-color: #3e3838;
+    margin-left: 312px;
+    padding: 20px;
+    width: 960px;
+    height: 350px;
     color: #ada55a;
-    font-family: "Roboto", sans-serif;
-    font-weight: lighter;
-    font-size: 2em;
-    letter-spacing: 20px;
+}
+
+h2 {
     border-top: 1px solid #ada55a;
     border-bottom: 1px solid #ada55a;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    letter-spacing: 15px;
+    font-weight: 20;
+    top: 50px;
 }
 
-.paraintro{
-    color: #ada55a;
-    font-family: "Roboto", sans-serif;
-    font-weight: lighter;
+.p-intro {
     text-align: center;
-    line-height: 30px;
-    font-size: 1em;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 110px;
-    padding-right: 110px;
+    position: relative;
+    top: 100px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
 }
 
-.avengers{
-    width: 960px;
-    height: 650px;
+.avengers {
+    position: relative;
     background-color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 110px;
-    padding-right: 110px;
-    text-align: center;
-    background-image: url("images/avengers.jpg");
-    background-repeat: no-repeat;
-    
-    background-position-x: center;
-    background-position-y: 300px;
-    
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 590px;
+}
+
+.titre-avengers {
+    color: #6cbcb3;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-avengers {
+    color: #282828;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-avengers {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 30%;
+}
+
+.span-avengers {
+    position: absolute;
+    top: 510px;
+    color: #6cbcb3;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+.astarisborn {
+    position: relative;
+    background-color: #6cbcb3;
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 540px;
+}
+
+.titre-astarisborn {
+    color: #3e3838;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-astarisborn {
+    color: #3e3838;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-astarisborn {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+}
+
+.span-astarisborn {
+    position: absolute;
+    top: 460px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+.womanatwar {
+    position: relative;
+    background-color: #3e3838;
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 640px;
+}
+
+.titre-woman {
+    color: white;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-woman {
+    color: #ffffff;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-woman {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+}
+
+.span-woman {
+    position: absolute;
+    top: 560px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+footer {
+    position: relative;
+    background-color: #000000;
+    width: 960px;
+    height: 180px;
+    margin-left: 312px;
+}
+
+.img-logo {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+}
+
+.span-footer {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1rem;
+    top: 80px;
+    left: 60px;
+    line-height: 25px;
 }
