@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.global{
+    background-color: white;
+    border: 4px solid rgb(22, 122, 67);
+    margin: 5%;
+    width: 30vw;
+    height: 70vh;
+}
+
+header{
+    background-color: white;
+    border: 4px solid orangered;
+    margin: 2%;
+    height: 10vh;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.gauche{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.droite{
+    
+}
+
+.sg{
+    background-color: white;
+    border: 4px solid blue;
+    justify-content: space-evenly;
+    margin: 2%;
+    width: 5vw;
+    height: 3vh;
+}
