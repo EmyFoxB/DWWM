@@ -1,0 +1,32 @@
+.grid-container{
+    display: grid;
+    /* largeur
+    grid-template-columns: 25% auto 200px;
+    /* hauteur */
+    /* grid-template-rows: 200px 150px 150px; */
+
+    /* fr = fraction */
+    /* grid-template-columns: 1fr 2fr 3fr 1fr; */
+
+    /* x*col. de même taille */
+    /* grid-template-columns: repeat(8,1fr); */
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 500px 100px;
+    /* écart entre col. */
+    /* column-gap: 20px; */
+    /* écart entre lignes */
+    /* row-gap: 20px; */
+
+    /* gap : val1 = lignes; val2 = col. */
+    gap: 10px 10px;
+
+    /* aligner contenu intérieur sur axe col. */
+    justify-items: stretch;
+    /* aligner contenu intérieur sur axe lignes */
+    align-items: center;
+}
+
+div{
+    border: 1px dotted black;
+}

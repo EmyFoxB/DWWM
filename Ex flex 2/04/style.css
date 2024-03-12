@@ -14,7 +14,7 @@ body{
     border: 4px solid rgb(22, 122, 67);
     margin: 5%;
     width: 30vw;
-    height: 70vh;
+    height: 45vh;
 }
 
 header{
@@ -26,7 +26,8 @@ header{
 
 .main{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 95%;
 }
 
 .gauche{
@@ -36,14 +37,32 @@ header{
 }
 
 .droite{
-    
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .sg{
     background-color: white;
-    border: 4px solid blue;
+    border: 4px solid rgb(81, 81, 211);
     justify-content: space-evenly;
     margin: 2%;
     width: 5vw;
     height: 3vh;
+}
+
+.sd{
+    background-color: white;
+    border: 4px solid rgb(22, 22, 73);
+    justify-content: space-evenly;
+    margin: 2%;
+    width: 15vw;
+    height: 5vh;
+}
+
+footer{
+    background-color: white;
+    border: 4px solid green;
+    margin: 2%;
+    height: 10vh;
 }
