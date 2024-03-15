@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(168, 216, 248);
+    font-family: "Roboto", sans-serif;
+    margin: 5%;
+}
+
+h1{
+    display: flex;
+    background-color: rgb(2, 197, 197);
+    justify-content: center;
+    height: 10vh;
+    align-items: center;
+    color: whitesmoke;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+aside{
+    display: flex;
+    background-color: rgb(109, 241, 21);
+    height: 50vh;
+    align-items: center;
+}
+
+article{
+    background-color: rgb(255, 190, 12);
+}
