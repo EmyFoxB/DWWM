@@ -99,31 +99,19 @@ h3{
 1 */
 
 body{
-    width: auto;
-    height: auto;
+    width: 100%;
 }
 
-/* 2 */
-
 .container{
-    background-color: aqua;
-    font-family: "Roboto", sans-serif;
-    color: whitesmoke;
+    background-color: red;
     margin: 2%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 80vh;
+    justify-content: center;
 }
 
 header{
-    background-color: red;
-    margin: 1%;
-    padding: 2%;
-}
-
-h1{
-    font-size: 2rem;
-    font-weight: 100;
-    text-align: center;
+    background-color: aqua;
+    justify-content: center;
 }
