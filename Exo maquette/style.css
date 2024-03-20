@@ -102,7 +102,6 @@ body{
     background-color: aqua;
     font-family: "Roboto", sans-serif;
     margin: 2vh 2vw;color: aliceblue;
-    font-size: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -115,6 +114,7 @@ body{
 header{
     display: flex;
     justify-content: center;
+    font-size: 2rem;
 }
 
 main{
@@ -131,6 +131,7 @@ main{
     height: 60vh;
     display: flex;
     justify-content: center;
+    font-size: 2rem;
 }
 
 .aside{
@@ -147,13 +148,15 @@ main{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-end;
+    font-size: 2rem;
 }
 
 .art{
     align-self: center;
-    flex-grow: 2;
+    flex-grow: 3;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .image{
@@ -164,7 +167,29 @@ main{
     flex-grow: 0;
 }
 
-.img{
+.img1{
     background-color: black;
     padding: 2rem 1rem 2rem 1rem;
+}
+
+.img2{
+    background-color: black;
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.img3{
+    background-color: black;
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.container4{
+    background-color: blueviolet;
+    margin-top: 2vh;
+    padding: 2vh 2vw;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
 }
