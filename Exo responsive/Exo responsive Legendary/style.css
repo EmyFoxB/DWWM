@@ -1,0 +1,429 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #efe784;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+
+    background: url(./images/logoheader.png), url(./images/header.jpg);
+    background-repeat: no-repeat;
+    width: 960px;
+    height: 350px;
+    background-position: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    letter-spacing: 22px;
+    color: #efe784;
+    font-weight: 20;
+    position: absolute;
+    top: 250px;
+    left: 640px;
+}
+
+main {
+    width: 960px;
+}
+
+.intro {
+    position: relative;
+    background-color: #3e3838;
+    margin-left: 312px;
+    padding: 20px;
+    width: 960px;
+    height: 350px;
+    color: #ada55a;
+}
+
+h2 {
+    border-top: 1px solid #ada55a;
+    border-bottom: 1px solid #ada55a;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    letter-spacing: 15px;
+    font-weight: 20;
+    top: 50px;
+}
+
+.p-intro {
+    text-align: center;
+    position: relative;
+    top: 100px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.avengers {
+    position: relative;
+    background-color: white;
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 590px;
+}
+
+.titre-avengers {
+    color: #6cbcb3;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-avengers {
+    color: #282828;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-avengers {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 30%;
+}
+
+.span-avengers {
+    position: absolute;
+    top: 510px;
+    color: #6cbcb3;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+.astarisborn {
+    position: relative;
+    background-color: #6cbcb3;
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 540px;
+}
+
+.titre-astarisborn {
+    color: #3e3838;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-astarisborn {
+    color: #3e3838;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-astarisborn {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+}
+
+.span-astarisborn {
+    position: absolute;
+    top: 460px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+.womanatwar {
+    position: relative;
+    background-color: #3e3838;
+    margin-left: 312px;
+    padding: 40px;
+    width: 960px;
+    height: 640px;
+}
+
+.titre-woman {
+    color: white;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-weight: 30;
+}
+
+.p-woman {
+    color: #ffffff;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.img-woman {
+    margin-left: 100px;
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+}
+
+.span-woman {
+    position: absolute;
+    top: 560px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    left: 140px;
+    line-height: 20px;
+}
+
+footer {
+    position: relative;
+    background-color: #000000;
+    width: 960px;
+    height: 180px;
+    margin-left: 312px;
+}
+
+.img-logo {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+}
+
+.span-footer {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1rem;
+    top: 80px;
+    left: 60px;
+    line-height: 25px;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #efe784;
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+}
+
+header {
+    background-image: url("./images/header.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 960px;
+    height: 350px;
+}
+
+.logoheader {
+    align-self: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    letter-spacing: 22px;
+    color: #efe784;
+    font-weight: 20;
+    text-align: center;
+    padding-top: 2%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 960px;
+}
+
+.intro {
+    background-color: #3e3838;
+    padding: 3%;
+    color: #ada55a;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    border-top: 1px solid #ada55a;
+    border-bottom: 1px solid #ada55a;
+    font-size: 1.5rem;
+    letter-spacing: 15px;
+    font-weight: 20;
+    justify-content: center;
+    align-self: center;
+    direction: rtl;
+    text-indent: -15px;
+}
+
+.p-intro {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+    padding: 3%;
+}
+
+.avengers {
+    background-color: white;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+    
+.titre-avengers {
+    color: #6cbcb3;
+    margin-left: 10%;
+    font-size: 2rem;
+    font-weight: 30;
+    margin-bottom: 3%;
+}
+    
+.p-avengers {
+    color: #282828;
+    margin-left: 10%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-bottom: 3%;
+}
+    
+.img-avengers {
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 30%;
+    align-self: center;
+    margin-bottom: 3%;
+}
+    
+.span-avengers {
+    color: #6cbcb3;
+    font-size: 0.8rem;
+    line-height: 20px;
+    margin-left: 10%;
+}
+
+.astarisborn {
+    background-color: #6cbcb3;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titre-astarisborn {
+    color: #3e3838;
+    margin-left: 10%;
+    font-size: 2rem;
+    font-weight: 30;
+    margin-bottom: 3%;
+}
+
+.p-astarisborn {
+    color: #3e3838;
+    margin-left: 10%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-bottom: 3%;
+}
+
+.img-astarisborn {
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+    align-self: center;
+    margin-bottom: 3%;
+}
+
+.span-astarisborn {
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 20px;
+    margin-left: 10%;
+    line-height: 20px;
+}
+
+.womanatwar {
+    background-color: #3e3838;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titre-woman {
+    color: white;
+    margin-left: 10%;
+    font-size: 2rem;
+    font-weight: 30;
+    margin-bottom: 3%;
+}
+
+.p-woman {
+    color: #ffffff;
+    margin-left: 10%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-bottom: 3%;
+}
+
+.img-woman {
+    width: 603px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 10% 10%;
+    align-self: center;
+    margin-bottom: 3%;
+}
+
+.span-woman {
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 20px;
+    margin-left: 10%;
+    line-height: 20px;
+}
+
+footer {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 960px;
+}
+
+.img-logo {
+    width: 140px;
+    height: 32px;
+    margin: 5%;
+}
+
+.span-footer {
+
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 25px;
+    margin-left: 5%;
+}
