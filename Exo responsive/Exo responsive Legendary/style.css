@@ -427,3 +427,9 @@ footer {
     line-height: 25px;
     margin-left: 5%;
 }
+
+@media screen and (max-width: 1246px){
+    body{
+        flex-wrap: wrap;
+    }
+}
