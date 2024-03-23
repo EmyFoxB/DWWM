@@ -8,9 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1440px;
-    padding-left: 238px;
     font-family: "Roboto", sans-serif;
+    margin: 0 5vw 0 5vw;
 }
 
 nav{
@@ -18,7 +17,6 @@ nav{
     height: 60px;
     display: flex;
     justify-content: center;
-    width: 1440px;
 }
 
 ul {
@@ -43,7 +41,6 @@ a {
 header {
     background-image: url(./Images/header-bg\ 1.png);
     height: 400px;
-    width: 1440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,13 +66,14 @@ h1 {
 }
 
 main {
-    width: 1440px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sectionintro {
     background-color: #ECEFD8;
-    width: 1440px;
+    width: 100%;
     height: 440px;
     padding-top: 56px;
     display: flex;
@@ -98,7 +96,7 @@ main {
     line-height: 35.28px
 }
 
-#btn-more {
+.btn-more {
     width: 211px;
     height: 65px;
     background-color: #849561;
@@ -107,4 +105,51 @@ main {
     font-weight: 700;
     font-size: 1rem;
     border: 1px solid white;
+}
+
+.sectionmoment {
+
+    background-color: #393939;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titremoment {
+    color: #849561;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.images {
+    display: inline-flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 0 5% 0 5%;
+}
+
+.ishibashi {
+    display: flex;
+    flex-direction: column;
+    width: 253px;
+    height: 404px;
+    background-color: #849561;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}
+
+p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+    line-height: 16.41px;
 }
