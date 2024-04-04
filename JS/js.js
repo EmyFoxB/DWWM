@@ -177,28 +177,164 @@
 
 // Exo 4
 
-function nombreJoursDansMois(mois, annee) {
-    switch (mois) {
-        case 1: // Janvier
-        case 3: // Mars
-        case 5: // Mai
-        case 7: // Juillet
-        case 8: // Août
-        case 10: // Octobre
-        case 12: // Décembre
-            return 31;
-        case 4: // Avril
-        case 6: // Juin
-        case 9: // Septembre
-        case 11: // Novembre
-            return 30;
-        case 2: // Février
-            if ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) {
-                return 29; // Année bissextile
-            } else {
-                return 28; // Année non bissextile
-            }
-        default:
-            return -1; // Valeur invalide pour le mois
-    }
-}
+// function nombreJoursDansMois(mois, annee) {
+//     switch (mois) {
+//         case 1: 
+//         case 3: 
+//         case 5: 
+//         case 7: 
+//         case 8: 
+//         case 10: 
+//         case 12: 
+//             return 31;
+//         case 4: 
+//         case 6: 
+//         case 9: 
+//         case 11: 
+//             return 30;
+//         case 2: 
+//             if ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) {
+//                 return 29; // Année bissextile
+//             } else {
+//                 return 28; // Année non bissextile
+//             }
+//         default:
+//             return -1; // Valeur invalide pour le mois
+//     }
+// }
+
+// console.log("Le nombre de jours dans le mois de Février est de :" + nombreJoursDansMois(2))
+
+
+// function nombreDeJours(num){
+//     let nombreDeJours;
+//     let annee = new Date().getFullYear()
+
+//     switch (num) {
+//         case 1:
+//             nombreDeJours = 31;
+//             break;
+//         case 2:
+//             if (annee % 4 == 0) nombreDeJours = 29;
+//             else nombreDeJours = 28;
+//             break;
+//         case 3:
+//             nombreDeJours = 31;
+//             break;
+//         case 4:
+//             nombreDeJours = 30;
+//             break;
+//         case 5:
+//             nombreDeJours = 31;
+//             break;
+//         case 6:
+//             nombreDeJours = 30;
+//             break;
+//         case 7:
+//             nombreDeJours = 31;
+//             break;
+//         case 8:
+//             nombreDeJours = 31;
+//             break;
+//         case 9:
+//             nombreDeJours = 30;
+//             break;
+//         case 10:
+//             nombreDeJours = 31;
+//             break;
+//         case 11:
+//             nombreDeJours = 30;
+//             break;
+//         case 12:
+//             nombreDeJours = 31;
+//             break
+//     }
+//     console.log("nombre de jours :" + nombreDeJours);
+// }
+
+// nombreDeJours(2);
+
+// ### Exercice 1 : Modification du contenu d'un élément
+
+// Ajoutez un bouton à votre page HTML et un paragraphe vide. Lorsque vous cliquez sur le bouton, le texte "Hello, world!" doit être ajouté au paragraphe.
+
+
+// let bouton = document.getElementById("bouton");
+// let paragraphe = document.getElementById("paragraphe")
+
+// document.addEventListener("click", function() {
+//     document.getElementById("textP").textContent="Hello World!"
+//     console.log("Hello World!");
+// });
+
+// ### Exercice 2 : Modification de style
+
+// Ajoutez un bouton à votre page HTML et un paragraphe avec du texte. Lorsque vous cliquez sur le bouton, changez la couleur du texte du paragraphe en rouge.
+
+// let bouton = document.getElementById("bouton");
+// let element = document.getElementById("textP");
+
+// document.addEventListener("click", function(){
+//     element.style.color = "red";
+//     console.log("click");
+// })
+
+
+// ### Exercice 3 : Création d'éléments
+
+// Ajoutez un bouton à votre page HTML. Lorsque vous cliquez sur ce bouton, un nouvel élément de type `<li>` doit être créé et ajouté à une liste `<ul>` existante sur la page avec le texte "Nouvel élément".
+
+// let bouton =document.getElementById("bouton")
+// let ul =document.getElementById("ul")
+
+// bouton.addEventListener("click", function() {
+//     let li = document.createElement("li")
+//     let txtli = document.createTextNode("lorem loremloremlorem")
+//     li.appendChild(txtli)
+//     ul.appendChild(li)
+
+// })
+
+
+
+// ### Exercice 4 : Suppression d'éléments
+
+// Ajoutez plusieurs éléments de type `<li>` à une liste `<ul>` sur votre page HTML. Ajoutez un bouton à la page. Lorsque vous cliquez sur ce bouton, le premier élément de la liste doit être supprimé.
+
+// let bouton = document.getElementById("bouton");
+// let ul = document.getElementById("ul");
+
+// bouton.addEventListener("click", function() {
+//     let li = document.remove("li");
+//     ul.appendChild(li);
+// })
+
+
+
+// let btn4 = document.getElementById("btn4");
+// let li = document.getElementById("li2")
+// let del = false; // Variable pour suivre l'état de suppression
+
+// btn4.addEventListener("click", function() {
+//     if (!del) {
+//         li2.remove();
+//         del = true; // Met à jour l'état de suppression
+//         console.log("List  1 supprimer!");
+//     } else {
+//         console.log("Stop tu l'as déjà supprimé");
+//     }
+// });
+
+
+
+
+let btn5 = document.getElementById('btn5');
+let btn6 = document.getElementById('btn6');
+let btn7 = document.getElementById('btn7');
+btn5.addEventListener('click', handleButtonClick);
+btn6.addEventListener('click', handleButtonClick);
+btn7.addEventListener('click', handleButtonClick);
+function handleButtonClick(event) {
+    let buttonId = event.target.id;
+    console.log("Vous avez cliqué sur le bouton : ", buttonId);
+  }
