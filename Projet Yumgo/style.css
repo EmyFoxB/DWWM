@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Jelly";
+    src: url(/fonts/candy_jelly/CandyJelly.otf)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    background-image: url(./images/Desktop\ -\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.div-btn {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: 10%;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+#start-btn {
+    font-family: "Jelly", sans-serif;
+    color: #ffffff;
+    font-size: 3rem;
+    padding: 2%;
+    border: solid 1px;
+    border-radius: 5%;
+    background-color: #FFBAF8;
+}
+
+#tuto-btn {
+    font-family: "Jelly", sans-serif;
+    color: #ffffff;
+    font-size: 3rem;
+    padding: 2%;
+    border: solid 1px;
+    border-radius: 5%;
+    background-color: #FFBAF8;
+}
