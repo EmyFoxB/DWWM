@@ -2,6 +2,10 @@
     font-family: "Jelly";
     src: url(/fonts/candy_jelly/CandyJelly.otf)
 }
+@font-face {
+    font-family: "Scolaire";
+    src: url(/fonts/Cursive\ standard.ttf);
+}
 
 * {
     box-sizing: border-box;
@@ -11,12 +15,12 @@
 
 body {
     width: 100vw;
-    background-image: url(./images/Desktop\ -\ 2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 main {
+    background-image: url(./images/Desktop\ -\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -50,4 +54,101 @@ main {
     border: solid 1px;
     border-radius: 5%;
     background-color: #FFBAF8;
+}
+
+#div-modal {
+    width: 50%;
+    height: 60%;
+    background-color: #FFBAF8;
+    border-radius: 40px;
+    border: solid 1px white;
+    position: absolute;
+    margin-top: 10%;
+}
+
+h1 {
+    font-family: "Jelly", sans-serif;
+    font-size: 6rem;
+    font-weight: 100;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #fd78bb;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 2%;
+}
+
+#section-joueurs {
+    display: flex;
+    flex-direction: row;
+    background-image: url(./images/perso-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#div-perso {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 15%;
+}
+
+h2 {
+    font-family: "Jelly", sans-serif;
+    color: #fd78bb;
+    font-size: 2.5rem;
+    font-weight: 100;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+h3 {
+    font-family: "Jelly", sans-serif;
+    color: #80b2fd;
+    font-size: 1.5rem;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+input {
+    height: 22px;
+    margin-left: 5%;
+    margin-top: 5%;
+    border: none;
+    border: solid 1px #fd78bb;
+}
+
+.div-perso {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    height: 150px;
+}
+
+#dango-blue {
+    border: none;
+    background-color: transparent;
+}
+
+#baby-dango {
+    border: none;
+    background-color: transparent;
+}
+
+#dango-ojii {
+    border: none;
+    background-color: transparent;
+}
+
+#dango-pink {
+    border: none;
+    background-color: transparent;
 }
