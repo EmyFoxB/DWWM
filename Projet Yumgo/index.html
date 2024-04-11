@@ -10,48 +10,59 @@
 </head>
 
 <body>
-    <main>
+    <main class="main">
         <div class="div-btn">
-            <button id="start-btn">JOUER</button>
-            <button id="tuto-btn">REGLES</button>
+            <button class="start-btn">JOUER</button>
+            <button class="tuto-btn">REGLES</button>
         </div>
-        <div id="div-modal">
+        <div class="div-modal">
             <h1 class="titre-modal">REGLES DU JEU</h1>
 
+            <button class="close-btn">Fermer</button>
 
         </div>
     </main>
 
-    <section id="section-joueurs">
-        <div id="div-perso">
+    <section class="section-joueurs">
+        <div class="div-player1">
             <h2>Joueur A</h2>
             <div class="div-name">
                 <label for="username"></label>
                 <input type="text" id="username" name="username" placeholder="Entre ton pseudo">
             </div>
             <h3>Choisis ton personnage</h3>
-            <div class="div-perso">
-                <button id="dango-blue"><img src="./images/Dango Blue.png" alt="image Dango Blue"></button>
-                <button id="baby-dango"><img src="./images/Baby Dango.png" alt="image Baby Dango"></button>
-                <button id="dango-ojii"><img src="./images/Ojii Dango.png" alt="image Dango Ojii"></button>
-                <button id="dango-pink"><img src="./images/Dango Pink.png" alt="image Dango Pink"></button>
+            <div id="div-perso">
+                <button class="dango-blue img bluep1"><img src="./images/Dango Blue.png" alt="image Dango Blue"></button>
+                <button class="baby-dango img babyp1"><img src="./images/Baby Dango.png" alt="image Baby Dango"></button>
+                <button class="dango-ojii img ojiip1"><img src="./images/Ojii Dango.png" alt="image Dango Ojii"></button>
+                <button class="dango-pink img pinkp1"><img src="./images/Dango Pink.png" alt="image Dango Pink"></button>
             </div>
+            <button class="validerP1">Valider</button>
         </div>
 
-        <div id="div-perso">
+        <div class="div-player2">
             <h2>Joueur B</h2>
             <div class="div-name">
                 <label for="username"></label>
                 <input type="text" id="username" name="username" placeholder="Entre ton pseudo">
             </div>
             <h3>Choisis ton personnage</h3>
-            <div class="div-perso">
-                <button id="dango-blue"><img src="./images/Dango Blue.png" alt="image Dango Blue"></button>
-                <button id="baby-dango"><img src="./images/Baby Dango.png" alt="image Baby Dango"></button>
-                <button id="dango-ojii"><img src="./images/Ojii Dango.png" alt="image Dango Ojii"></button>
-                <button id="dango-pink"><img src="./images/Dango Pink.png" alt="image Dango Pink"></button>
+            <div id="div-perso">
+                <button class="dango-blue img bluep2"><img src="./images/Dango Blue.png" alt="image Dango Blue"></button>
+                <button class="baby-dango img babyp2"><img src="./images/Baby Dango.png" alt="image Baby Dango"></button>
+                <button class="dango-ojii img ojiip2"><img src="./images/Ojii Dango.png" alt="image Dango Ojii"></button>
+                <button class="dango-pink img pinkp2"><img src="./images/Dango Pink.png" alt="image Dango Pink"></button>
             </div>
+            <button class="validerP2">Valider</button>
         </div>
+    </section>
+
+    <section class="sectionCombat">
+
+        <div class="combatP1"></div>
+
+        <div class="combatP2"></div>
+
     </section>
 
 
