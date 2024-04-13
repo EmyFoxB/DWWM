@@ -1,8 +1,8 @@
 let data = {
-    "Blue": { "nom": "Blue", "HP": 100, "ATK": 10 },
-    "Baby": { "nom": "Baby", "HP": 100, "ATK": 10 },
-    "Ojii": { "nom": "Ojii", "HP": 100, "ATK": 10 },
-    "Pinky": { "nom": "Pinky", "HP": 100, "ATK": 10 },
+    "Blue": { "nom": "Blue", "HP": 75, "ATK": 15 },
+    "Baby": { "nom": "Baby", "HP": 150, "ATK": 8 },
+    "Ojii": { "nom": "Ojii", "HP": 85, "ATK": 12 },
+    "Pinky": { "nom": "Pinky", "HP": 120, "ATK": 10 },
 }
 
 let joueur1;
@@ -252,14 +252,16 @@ const btnAtkP1 = document.querySelector(".btnAtkP1");
 const HPP2 = document.querySelector(".valeurHPP2");
 
 btnAtkP1.addEventListener("click", () => {
-    joueur2.hp = joueur2.hp - joueur1.atk;
-    HPP2.textContent = joueur2.hp;
+    joueur2.HP = joueur2.HP - joueur1.ATK;
+    HPP2.textContent = joueur2.HP;
     btnAtkP1.disabled = true;
     btnAtkP2.disabled = false;
     btnAtkP2.style.borderColor = "yellow";
     btnAtkP2.style.borderWidth = "7px";
+    btnAtkP1.style.borderColor ="transparent";
+    
 
-    if (joueur2.hp <=0) {
+    if (joueur2.HP <=0) {
         btnAtkP1.disabled = true;
         btnAtkP2.disabled = true;
         alert("JOUEUR 1 GAGNE");
@@ -270,14 +272,16 @@ const btnAtkP2 = document.querySelector(".btnAtkP2");
 const HPP1 = document.querySelector(".valeurHPP1");
 
 btnAtkP2.addEventListener("click", () => {
-    joueur1.hp = joueur1.hp - joueur2.atk;
-    HPP1.textContent = joueur1.hp;
+    joueur1.HP = joueur1.HP - joueur2.ATK;
+    HPP1.textContent = joueur1.HP;
     btnAtkP2.disabled = true;
     btnAtkP1.disabled = false;
     btnAtkP1.style.borderColor = "yellow";
     btnAtkP1.style.borderWidth = "7px";
+    btnAtkP2.style.borderColor ="transparent";
+    
 
-    if (joueur1.hp <=0) {
+    if (joueur1.HP <=0) {
         btnAtkP2.disabled = true;
         btnAtkP1.disabled = true;
         alert("JOUEUR 2 GAGNE");
