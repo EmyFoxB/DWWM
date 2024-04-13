@@ -217,6 +217,10 @@ input {
     background-color: #FFBAF8;
     opacity: 0.5;
     border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .combatP2 {
@@ -225,4 +229,103 @@ input {
     background-color: #80b2fd;
     opacity: 0.5;
     border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgP1 {
+    width: 30%;
+    height: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.imgP2 {
+    width: 30%;
+    height: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nomJ1 {
+    font-family: "Jelly", sans-serif;
+    font-size: 4rem;
+    color: #ff0000;
+}
+
+
+.nomJ2 {
+    font-family: "Jelly", sans-serif;
+    font-size: 4rem;
+    color: #ff0000;
+}
+
+.nomP1 {
+    font-family: "Jelly", sans-serif;
+    font-size: 3rem;
+    color: #000000;
+}
+
+.nomP2 {
+    font-family: "Jelly", sans-serif;
+    font-size: 3rem;
+    color: #000000;
+}
+
+.divAtk {
+    display: flex;
+    justify-content: center;
+}
+
+.iconAtk {
+    width: 10%;
+}
+
+.valeurAtkP1 {
+    font-size: 3rem;
+}
+
+.divHP {
+    display: flex;
+    justify-content: center;
+}
+
+.iconHP {
+    width: 10%;
+}
+
+.valeurHPP1 {
+    font-size: 3rem;
+}
+
+.btnAtkP1 {
+    font-family: "Jelly", sans-serif;
+    color: #ffffff;
+    font-size: 3rem;
+    padding: 2%;
+    border: solid 1px;
+    border-radius: 5%;
+    background-color: #80b2fd;
+}
+
+.valeurAtkP2 {
+    font-size: 3rem;
+}
+
+.valeurHPP2 {
+    font-size: 3rem;
+}
+
+.btnAtkP2 {
+    font-family: "Jelly", sans-serif;
+    color: #ffffff;
+    font-size: 3rem;
+    padding: 2%;
+    border: solid 1px;
+    border-radius: 5%;
+    background-color: #FFBAF8;
 }
