@@ -1,0 +1,35 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    background-color: #fffddb;
+}
+.card{
+    background-color: rgb(250, 168, 229);
+    color: rgb(255, 255, 255);
+    width: 20vw;
+    height: 25vh;
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+label {
+    font-family: "Roboto", sans-serif;
+}
+
+button {
+    margin-top: 5%;
+    width: 5vw;
+    height: 4vh;
+    background-color: rgb(250, 168, 229);
+    color: white;
+    font-size: 1.3rem;
+}
