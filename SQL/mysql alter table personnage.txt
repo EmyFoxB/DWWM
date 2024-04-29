@@ -1,0 +1,564 @@
+mysql> alter table personnage
+    -> change nom pseudo TEXT;
+ERROR 1064 (42000): Erreur de syntaxe près de 'tab personnage
+change nom pseudo TEXT' à la ligne 1
+mysql> alter table personnage
+    -> change nom pseudo TEXT;
+Query OK, 7 rows affected (0.09 sec)
+Enregistrements: 7  Doublons: 0  Avertissements: 0
+
+mysql> alter table personnage
+    -> change level niveau TEXT;
+Query OK, 7 rows affected (0.08 sec)
+Enregistrements: 7  Doublons: 0  Avertissements: 0
+
+mysql> select pseudo, niveau from personnage;
++--------------+--------+
+| pseudo       | niveau |
++--------------+--------+
+| wawaf        | 10     |
+| leWar        | 8      |
+| guerrierDu09 | 10     |
+| headhunter   | 10     |
+| larcher      | 5      |
+| lartificier  | 7      |
+| roguiBalbao  | 10     |
++--------------+--------+
+7 rows in set (0.00 sec)
+
+
+
+mysql> alter table typearme
+    -> rename column type_d_armes_du_jeu to `type d armes du jeu`;
+Query OK, 0 rows affected (0.02 sec)
+Enregistrements: 0  Doublons: 0  Avertissements: 0
+
+mysql> select * from typearme;
++------------+---------------------+-------------+
+| idTypeArme | type d armes du jeu | estDistance |
++------------+---------------------+-------------+
+|          1 | Hache               |           0 |
+|          2 | Arc                 |           1 |
+|          3 | Epee                |           0 |
+|          4 | Arbalete            |           1 |
+|          5 | Masse               |           0 |
+|          6 | Dague               |           0 |
++------------+---------------------+-------------+
+6 rows in set (0.00 sec)
+
+
+
+
+mysql> SELECT COUNT(*) AS "nombre d armes" FROM arme;
++----------------+
+| nombre d armes |
++----------------+
+|             10 |
++----------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT COUNT(*) AS "nombre de personnages" FROM personnage;
++-----------------------+
+| nombre de personnages |
++-----------------------+
+|                     7 |
++-----------------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT AVG(niveau) AS "Moyenne de niveau" from personnage;
++-------------------+
+| Moyenne de niveau |
++-------------------+
+| 8.571428571428571 |
++-------------------+
+1 row in set (0.01 sec)
+
+
+
+
+
+
+mysql> SELECT SUM(baseForce) AS "Points de force", SUM(baseAgi) AS "Points d agilité", SUM(baseIntel) AS "Points d'intel du jeu" FROM classe;
++-----------------+------------------+-----------------------+
+| Points de force | Points d agilité | Points d'intel du jeu |
++-----------------+------------------+-----------------------+
+|              13 |               11 |                     9 |
++-----------------+------------------+-----------------------+
+1 row in set (0.00 sec)
+
+
+mysql> SELECT MIN(levelMin) AS "MIN(levelMin)", MAX(levelMin) as "MAX(levelMin)" from arme;
++---------------+---------------+
+| MIN(levelMin) | MAX(levelMin) |
++---------------+---------------+
+|             1 |            10 |
++---------------+---------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+mysql> select nom, SUM(baseForce + baseAgi + baseIntel) from classe group by nom;
++----------+--------------------------------------+
+| nom      | SUM(baseForce + baseAgi + baseIntel) |
++----------+--------------------------------------+
+| Guerrier |                                   10 |
+| Archer   |                                   11 |
+| Voleur   |                                   12 |
++----------+--------------------------------------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT CONCAT(pseudo, surnom) FROM personnage;
++------------------------+
+| CONCAT(pseudo, surnom) |
++------------------------+
+| wawafBestWarrior       |
+| leWarptitWar           |
+| guerrierDu09baba       |
+| headhunterHH           |
+| NULL                   |
+| lartificierlartificier |
+| roguiBalbaoelBoxor     |
++------------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+mysql> SELECT CONCAT(nom,":", " -F : ", baseForce, " -A : ", baseAgi, " -I : ", baseIntel) AS Classe FROM classe;
++--------------------------------+
+| Classe                         |
++--------------------------------+
+| Guerrier: -F : 6 -A : 2 -I : 2 |
+| Archer: -F : 3 -A : 5 -I : 3   |
+| Voleur: -F : 4 -A : 4 -I : 4   |
++--------------------------------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+mysql> SELECT SUBSTRING(pseudo,1,6) from personnage;
++-----------------------+
+| SUBSTRING(pseudo,1,6) |
++-----------------------+
+| wawaf                 |
+| leWar                 |
+| guerri                |
+| headhu                |
+| larche                |
+| lartif                |
+| roguiB                |
++-----------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+mysql> SELECT CONCAT(LEFT(nom, 5), LEFT(description, 20)) AS Classe FROM classe;
++---------------------------+
+| Classe                    |
++---------------------------+
+| GuerrClasse de CaC, avec  |
+| ArcheClasse à distance ma |
+| VoleuClasse furtive, équi |
++---------------------------+
+3 rows in set (0.01 sec)
+
+
+
+
+
+
+
+
+
+
+
+mysql> SELECT * from arme WHERE levelMin >=5;
++--------+-----------------------+----------+-------+------------+
+| idArme | nom                   | levelMin | degat | idTypeArme |
++--------+-----------------------+----------+-------+------------+
+|      3 | HachedeGlace          |        7 |    35 |          1 |
+|      5 | Arc en bois debene    |        5 |    15 |          2 |
+|      6 | Arc des anges         |        9 |    30 |          2 |
+|      7 | Excalibur             |       10 |    65 |          3 |
+|     10 | Dage de contrebandier |        6 |    14 |          6 |
++--------+-----------------------+----------+-------+------------+
+5 rows in set (0.01 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> SELECT * from arme where degat <=25;
++--------+-----------------------+----------+-------+------------+
+| idArme | nom                   | levelMin | degat | idTypeArme |
++--------+-----------------------+----------+-------+------------+
+|      1 | HacheDuLyon           |        1 |    10 |          1 |
+|      2 | HacheDeFeu            |        3 |    20 |          1 |
+|      4 | Arc en bois           |        1 |     5 |          2 |
+|      5 | Arc en bois debene    |        5 |    15 |          2 |
+|      8 | Arbalete givrante     |        4 |    15 |          4 |
+|      9 | Dague de voleur       |        2 |     7 |          6 |
+|     10 | Dage de contrebandier |        6 |    14 |          6 |
++--------+-----------------------+----------+-------+------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+mysql> select pseudo, surnom from personnage where niveau=10;
++--------------+-------------+
+| pseudo       | surnom      |
++--------------+-------------+
+| wawaf        | BestWarrior |
+| guerrierDu09 | baba        |
+| headhunter   | HH          |
+| roguiBalbao  | elBoxor     |
++--------------+-------------+
+4 rows in set (0.01 sec)
+
+
+
+
+
+mysql> select * from typearme where estDistance=1;
++------------+---------------------+-------------+
+| idTypeArme | type d armes du jeu | estDistance |
++------------+---------------------+-------------+
+|          2 | Arc                 |           1 |
+|          4 | Arbalete            |           1 |
++------------+---------------------+-------------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+mysql> select * from arme where levelMin < 4 OR levelMin >=8;
++--------+-----------------+----------+-------+------------+
+| idArme | nom             | levelMin | degat | idTypeArme |
++--------+-----------------+----------+-------+------------+
+|      1 | HacheDuLyon     |        1 |    10 |          1 |
+|      2 | HacheDeFeu      |        3 |    20 |          1 |
+|      4 | Arc en bois     |        1 |     5 |          2 |
+|      6 | Arc des anges   |        9 |    30 |          2 |
+|      7 | Excalibur       |       10 |    65 |          3 |
+|      9 | Dague de voleur |        2 |     7 |          6 |
++--------+-----------------+----------+-------+------------+
+6 rows in set (0.00 sec)
+
+
+
+
+mysql> select * from arme where idArme<3 or degat>30;
++--------+--------------+----------+-------+------------+
+| idArme | nom          | levelMin | degat | idTypeArme |
++--------+--------------+----------+-------+------------+
+|      1 | HacheDuLyon  |        1 |    10 |          1 |
+|      2 | HacheDeFeu   |        3 |    20 |          1 |
+|      3 | HachedeGlace |        7 |    35 |          1 |
+|      7 | Excalibur    |       10 |    65 |          3 |
++--------+--------------+----------+-------+------------+
+4 rows in set (0.00 sec)
+
+
+
+mysql> select * from arme where idArme<3 or degat between 25 and 40;
++--------+---------------+----------+-------+------------+
+| idArme | nom           | levelMin | degat | idTypeArme |
++--------+---------------+----------+-------+------------+
+|      1 | HacheDuLyon   |        1 |    10 |          1 |
+|      2 | HacheDeFeu    |        3 |    20 |          1 |
+|      3 | HachedeGlace  |        7 |    35 |          1 |
+|      6 | Arc des anges |        9 |    30 |          2 |
++--------+---------------+----------+-------+------------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+mysql> select * from personnage where niveau!=8 and (niveau<6 or niveau>7);
++--------------+--------------+-------------+--------+---------------+----------+
+| idPersonnage | pseudo       | surnom      | niveau | idArmeUtilise | idClasse |
++--------------+--------------+-------------+--------+---------------+----------+
+|            1 | wawaf        | BestWarrior | 10     |             7 |        1 |
+|            3 | guerrierDu09 | baba        | 10     |             2 |        1 |
+|            4 | headhunter   | HH          | 10     |             6 |        2 |
+|            5 | larcher      | NULL        | 5      |             5 |        2 |
+|            7 | roguiBalbao  | elBoxor     | 10     |            10 |        3 |
++--------------+--------------+-------------+--------+---------------+----------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+mysql> select count(*) as "NB Perso <10" from personnage where niveau!=10;
++--------------+
+| NB Perso <10 |
++--------------+
+|            3 |
++--------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+mysql> select avg(degat) as "Moyenne dégat" from arme where levelMin between 3 and 7;
++---------------+
+| Moyenne dégat |
++---------------+
+|       19.8000 |
++---------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> select * from personnage where pseudo like 'l%';
++--------------+-------------+-------------+--------+---------------+----------+
+| idPersonnage | pseudo      | surnom      | niveau | idArmeUtilise | idClasse |
++--------------+-------------+-------------+--------+---------------+----------+
+|            2 | leWar       | ptitWar     | 8      |             3 |        1 |
+|            5 | larcher     | NULL        | 5      |             5 |        2 |
+|            6 | lartificier | lartificier | 7      |             8 |        2 |
++--------------+-------------+-------------+--------+---------------+----------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+
+mysql> select * from personnage where pseudo like 'l%er';
++--------------+-------------+-------------+--------+---------------+----------+
+| idPersonnage | pseudo      | surnom      | niveau | idArmeUtilise | idClasse |
++--------------+-------------+-------------+--------+---------------+----------+
+|            5 | larcher     | NULL        | 5      |             5 |        2 |
+|            6 | lartificier | lartificier | 7      |             8 |        2 |
++--------------+-------------+-------------+--------+---------------+----------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+mysql> select * from arme where nom like "%bois%";
++--------+--------------------+----------+-------+------------+
+| idArme | nom                | levelMin | degat | idTypeArme |
++--------+--------------------+----------+-------+------------+
+|      4 | Arc en bois        |        1 |     5 |          2 |
+|      5 | Arc en bois debene |        5 |    15 |          2 |
++--------+--------------------+----------+-------+------------+
+2 rows in set (0.01 sec)
+
+
+
+
+
+
+mysql> select * from arme where nom like 'a_b%';
++--------+-------------------+----------+-------+------------+
+| idArme | nom               | levelMin | degat | idTypeArme |
++--------+-------------------+----------+-------+------------+
+|      8 | Arbalete givrante |        4 |    15 |          4 |
++--------+-------------------+----------+-------+------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+mysql> select * from arme where idArme in (1, 2, 4, 5, 7);
++--------+--------------------+----------+-------+------------+
+| idArme | nom                | levelMin | degat | idTypeArme |
++--------+--------------------+----------+-------+------------+
+|      1 | HacheDuLyon        |        1 |    10 |          1 |
+|      2 | HacheDeFeu         |        3 |    20 |          1 |
+|      4 | Arc en bois        |        1 |     5 |          2 |
+|      5 | Arc en bois debene |        5 |    15 |          2 |
+|      7 | Excalibur          |       10 |    65 |          3 |
++--------+--------------------+----------+-------+------------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+mysql> select * from personnage where idPersonnage in (2, 3, 4, 6) and niveau=10;
++--------------+--------------+--------+--------+---------------+----------+
+| idPersonnage | pseudo       | surnom | niveau | idArmeUtilise | idClasse |
++--------------+--------------+--------+--------+---------------+----------+
+|            3 | guerrierDu09 | baba   | 10     |             2 |        1 |
+|            4 | headhunter   | HH     | 10     |             6 |        2 |
++--------------+--------------+--------+--------+---------------+----------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+mysql> select * from personnage where surnom is not null;
++--------------+--------------+-------------+--------+---------------+----------+
+| idPersonnage | pseudo       | surnom      | niveau | idArmeUtilise | idClasse |
++--------------+--------------+-------------+--------+---------------+----------+
+|            1 | wawaf        | BestWarrior | 10     |             7 |        1 |
+|            2 | leWar        | ptitWar     | 8      |             3 |        1 |
+|            3 | guerrierDu09 | baba        | 10     |             2 |        1 |
+|            4 | headhunter   | HH          | 10     |             6 |        2 |
+|            6 | lartificier  | lartificier | 7      |             8 |        2 |
+|            7 | roguiBalbao  | elBoxor     | 10     |            10 |        3 |
++--------------+--------------+-------------+--------+---------------+----------+
+6 rows in set (0.01 sec)
+
+
+
+
+
+
+
+mysql> select * from personnage where surnom is null;
++--------------+---------+--------+--------+---------------+----------+
+| idPersonnage | pseudo  | surnom | niveau | idArmeUtilise | idClasse |
++--------------+---------+--------+--------+---------------+----------+
+|            5 | larcher | NULL   | 5      |             5 |        2 |
++--------------+---------+--------+--------+---------------+----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+mysql> select * from personnage limit 3;
++--------------+--------------+-------------+--------+---------------+----------+
+| idPersonnage | pseudo       | surnom      | niveau | idArmeUtilise | idClasse |
++--------------+--------------+-------------+--------+---------------+----------+
+|            1 | wawaf        | BestWarrior | 10     |             7 |        1 |
+|            2 | leWar        | ptitWar     | 8      |             3 |        1 |
+|            3 | guerrierDu09 | baba        | 10     |             2 |        1 |
++--------------+--------------+-------------+--------+---------------+----------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> select * from personnage limit 2 offset 3;
++--------------+------------+--------+--------+---------------+----------+
+| idPersonnage | pseudo     | surnom | niveau | idArmeUtilise | idClasse |
++--------------+------------+--------+--------+---------------+----------+
+|            4 | headhunter | HH     | 10     |             6 |        2 |
+|            5 | larcher    | NULL   | 5      |             5 |        2 |
++--------------+------------+--------+--------+---------------+----------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
