@@ -456,8 +456,6 @@ mysql> select * from arme where nom like 'a_b%';
 
 
 
-
-
 mysql> select * from arme where idArme in (1, 2, 4, 5, 7);
 +--------+--------------------+----------+-------+------------+
 | idArme | nom                | levelMin | degat | idTypeArme |
@@ -554,11 +552,416 @@ mysql> select * from personnage limit 2 offset 3;
 
 
 
+__________________________________________________________________________________________________________________________________________________
 
 
 
 
 
+mysql> select *
+    -> from personnage
+    -> inner join classe on personnage.idClasse = classe.idClasse;
++--------------+--------------+-------------+-------+---------------+----------+----------+----------+-----------+---------+-----------+---------------------------------------------------------------------------------------+
+| idPersonnage | nom          | surnom      | level | idArmeUtilise | idClasse | idClasse | nom      | baseForce | baseAgi | baseIntel | description                                                                           |
++--------------+--------------+-------------+-------+---------------+----------+----------+----------+-----------+---------+-----------+---------------------------------------------------------------------------------------+
+|            1 | wawaf        | BestWarrior |    10 |             7 |        1 |        1 | Guerrier |         6 |       2 |         2 | Classe de CaC, avec une bonne résistance et maniant pratiquement tous les types armes |
+|            2 | leWar        | ptitWar     |     8 |             3 |        1 |        1 | Guerrier |         6 |       2 |         2 | Classe de CaC, avec une bonne résistance et maniant pratiquement tous les types armes |
+|            3 | guerrierDu09 | baba        |    10 |             2 |        1 |        1 | Guerrier |         6 |       2 |         2 | Classe de CaC, avec une bonne résistance et maniant pratiquement tous les types armes |
+|            4 | headhunter   | HH          |    10 |             6 |        2 |        2 | Archer   |         3 |       5 |         3 | Classe à distance maniant les épées et les armes à distance                           |
+|            5 | larcher      | NULL        |     5 |             5 |        2 |        2 | Archer   |         3 |       5 |         3 | Classe à distance maniant les épées et les armes à distance                           |
+|            6 | lartificier  | lartificier |     7 |             8 |        2 |        2 | Archer   |         3 |       5 |         3 | Classe à distance maniant les épées et les armes à distance                           |
+|            7 | roguiBalbao  | elBoxor     |    10 |            10 |        3 |        3 | Voleur   |         4 |       4 |         4 | Classe furtive, équilibrée mais ne maniant que les dagues                             |
++--------------+--------------+-------------+-------+---------------+----------+----------+----------+-----------+---------+-----------+---------------------------------------------------------------------------------------+
+7 rows in set (0.01 sec)
+
+
+
+
+
+
+mysql> select nom, levelMin, degat, libelle, estDistance
+    -> from arme
+    -> inner join typearme on arme.idTypeArme = typearme.idTypeArme;
++-----------------------+----------+-------+----------+-------------+
+| nom                   | levelMin | degat | libelle  | estDistance |
++-----------------------+----------+-------+----------+-------------+
+| HacheDuLyon           |        1 |    10 | Hache    |           0 |
+| HacheDeFeu            |        3 |    20 | Hache    |           0 |
+| HachedeGlace          |        7 |    35 | Hache    |           0 |
+| Arc en bois           |        1 |     5 | Arc      |           1 |
+| Arc en bois debene    |        5 |    15 | Arc      |           1 |
+| Arc des anges         |        9 |    30 | Arc      |           1 |
+| Excalibur             |       10 |    65 | Epee     |           0 |
+| Arbalete givrante     |        4 |    15 | Arbalete |           1 |
+| Dague de voleur       |        2 |     7 | Dague    |           0 |
+| Dage de contrebandier |        6 |    14 | Dague    |           0 |
++-----------------------+----------+-------+----------+-------------+
+10 rows in set (0.00 sec)
+
+
+_____________________________________________________________________________________________________________________________________________________________
+
+
+
+mysql> SELECT personnage.nom AS nom_personnage, classe.nom AS nom_classe
+    -> FROM personnage
+    -> INNER JOIN classe ON personnage.idClasse = classe.idClasse;
++----------------+------------+
+| nom_personnage | nom_classe |
++----------------+------------+
+| wawaf          | Guerrier   |
+| leWar          | Guerrier   |
+| guerrierDu09   | Guerrier   |
+| headhunter     | Archer     |
+| larcher        | Archer     |
+| lartificier    | Archer     |
+| roguiBalbao    | Voleur     |
++----------------+------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+mysql> select personnage.nom, arme.nom, levelMin, degat
+    -> from personnage
+    -> inner join arme on personnage.idArmeUtilise = arme.idArme;
++--------------+-----------------------+----------+-------+
+| nom          | nom                   | levelMin | degat |
++--------------+-----------------------+----------+-------+
+| wawaf        | Excalibur             |       10 |    65 |
+| leWar        | HachedeGlace          |        7 |    35 |
+| guerrierDu09 | HacheDeFeu            |        3 |    20 |
+| headhunter   | Arc des anges         |        9 |    30 |
+| larcher      | Arc en bois debene    |        5 |    15 |
+| lartificier  | Arbalete givrante     |        4 |    15 |
+| roguiBalbao  | Dage de contrebandier |        6 |    14 |
++--------------+-----------------------+----------+-------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+select personnage.nom, arme.nom, arme.levelMin, arme.degat, typeArme.libelle, typeArme.estDistance
+    -> FROM personnage
+    -> INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme
+    -> INNER JOIN typeArme ON arme.idTypeArme = typeArme.idTypeArme;
++--------------+-----------------------+----------+-------+----------+-------------+
+| nom          | nom                   | levelMin | degat | libelle  | estDistance |
++--------------+-----------------------+----------+-------+----------+-------------+
+| wawaf        | Excalibur             |       10 |    65 | Epee     |           0 |
+| leWar        | HachedeGlace          |        7 |    35 | Hache    |           0 |
+| guerrierDu09 | HacheDeFeu            |        3 |    20 | Hache    |           0 |
+| headhunter   | Arc des anges         |        9 |    30 | Arc      |           1 |
+| larcher      | Arc en bois debene    |        5 |    15 | Arc      |           1 |
+| lartificier  | Arbalete givrante     |        4 |    15 | Arbalete |           1 |
+| roguiBalbao  | Dage de contrebandier |        6 |    14 | Dague    |           0 |
++--------------+-----------------------+----------+-------+----------+-------------+
+7 rows in set (0.00 sec)
+
+
+
+_________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+SELECT personnage.nom, personnage.level, arme.nom, arme.levelMin
+FROM dispose
+INNER JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage
+INNER JOIN arme ON dispose.idArme = arme.idArme;
++--------------+-------+-----------------------+----------+
+| nom          | level | nom                   | levelMin |
++--------------+-------+-----------------------+----------+
+| wawaf        |    10 | HacheDuLyon           |        1 |
+| wawaf        |    10 | HacheDeFeu            |        3 |
+| wawaf        |    10 | HachedeGlace          |        7 |
+| wawaf        |    10 | Arc en bois           |        1 |
+| wawaf        |    10 | Dague de voleur       |        2 |
+| leWar        |     8 | HacheDuLyon           |        1 |
+| leWar        |     8 | HacheDeFeu            |        3 |
+| leWar        |     8 | HachedeGlace          |        7 |
+| guerrierDu09 |    10 | HacheDeFeu            |        3 |
+| guerrierDu09 |    10 | HachedeGlace          |        7 |
+| guerrierDu09 |    10 | Excalibur             |       10 |
+| headhunter   |    10 | Arc en bois           |        1 |
+| headhunter   |    10 | Arc en bois debene    |        5 |
+| larcher      |     5 | Excalibur             |       10 |
+| lartificier  |     7 | Arc en bois           |        1 |
+| lartificier  |     7 | Arbalete givrante     |        4 |
+| roguiBalbao  |    10 | Dague de voleur       |        2 |
+| roguiBalbao  |    10 | Dage de contrebandier |        6 |
++--------------+-------+-----------------------+----------+
+18 rows in set (0.00 sec)
+
+
+
+
+
+
+
+select arme.nom, arme.levelMin, arme.degat, typearme.libelle as "Type"
+    -> from arme
+    -> inner join typearme on arme.idTypeArme = typearme.idTypeArme
+    -> where estDistance != 1;
++-----------------------+----------+-------+-------+
+| nom                   | levelMin | degat | Type  |
++-----------------------+----------+-------+-------+
+| HacheDuLyon           |        1 |    10 | Hache |
+| HacheDeFeu            |        3 |    20 | Hache |
+| HachedeGlace          |        7 |    35 | Hache |
+| Excalibur             |       10 |    65 | Epee  |
+| Dague de voleur       |        2 |     7 | Dague |
+| Dage de contrebandier |        6 |    14 | Dague |
++-----------------------+----------+-------+-------+
+6 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+SELECT personnage.nom, arme.nom, typearme.libelle
+    -> FROM personnage
+    -> JOIN arme ON personnage.idArmeUtilise = arme.idArme
+    -> JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+    -> where idClasse =1;
++--------------+--------------+---------+
+| nom          | nom          | libelle |
++--------------+--------------+---------+
+| wawaf        | Excalibur    | Epee    |
+| leWar        | HachedeGlace | Hache   |
+| guerrierDu09 | HacheDeFeu   | Hache   |
++--------------+--------------+---------+
+3 rows in set (0.01 sec)
+
+
+
+_____________________________________________________________________________________________________________________________________
+
+
+
+
+
+SELECT personnage.idPersonnage, personnage.nom, arme.nom, typearme.libelle as "Type"
+FROM dispose
+INNER JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage
+INNER JOIN arme ON dispose.idArme = arme.idArme
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+WHERE personnage.level = 10;
++--------------+--------------+-----------------------+-------+
+| idPersonnage | nom          | nom                   | Type  |
++--------------+--------------+-----------------------+-------+
+|            1 | wawaf        | HacheDuLyon           | Hache |
+|            1 | wawaf        | HacheDeFeu            | Hache |
+|            1 | wawaf        | HachedeGlace          | Hache |
+|            1 | wawaf        | Arc en bois           | Arc   |
+|            1 | wawaf        | Dague de voleur       | Dague |
+|            3 | guerrierDu09 | HacheDeFeu            | Hache |
+|            3 | guerrierDu09 | HachedeGlace          | Hache |
+|            3 | guerrierDu09 | Excalibur             | Epee  |
+|            4 | headhunter   | Arc en bois           | Arc   |
+|            4 | headhunter   | Arc en bois debene    | Arc   |
+|            7 | roguiBalbao  | Dague de voleur       | Dague |
+|            7 | roguiBalbao  | Dage de contrebandier | Dague |
++--------------+--------------+-----------------------+-------+
+12 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+SELECT personnage.idPersonnage, personnage.nom, arme.nom, typearme.libelle as "Type"
+    -> FROM dispose
+    -> INNER JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage
+    -> INNER JOIN arme ON dispose.idArme = arme.idArme
+    -> INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+    -> WHERE personnage.level = 10
+    -> ORDER BY idPersonnage;
++--------------+--------------+-----------------------+-------+
+| idPersonnage | nom          | nom                   | Type  |
++--------------+--------------+-----------------------+-------+
+|            1 | wawaf        | HacheDuLyon           | Hache |
+|            1 | wawaf        | HacheDeFeu            | Hache |
+|            1 | wawaf        | HachedeGlace          | Hache |
+|            1 | wawaf        | Arc en bois           | Arc   |
+|            1 | wawaf        | Dague de voleur       | Dague |
+|            3 | guerrierDu09 | HacheDeFeu            | Hache |
+|            3 | guerrierDu09 | HachedeGlace          | Hache |
+|            3 | guerrierDu09 | Excalibur             | Epee  |
+|            4 | headhunter   | Arc en bois           | Arc   |
+|            4 | headhunter   | Arc en bois debene    | Arc   |
+|            7 | roguiBalbao  | Dague de voleur       | Dague |
+|            7 | roguiBalbao  | Dage de contrebandier | Dague |
++--------------+--------------+-----------------------+-------+
+12 rows in set (0.01 sec)
+
+
+
+
+
+
+SELECT AVG (arme.degat)
+    -> FROM arme
+    -> INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+    -> WHERE estDistance = 1;
++------------------+
+| AVG (arme.degat) |
++------------------+
+|          16.2500 |
++------------------+
+1 row in set (0.01 sec)
+
+
+
+
+
+
+
+select DISTINCT personnage.nom
+    -> FROM dispose
+    -> JOIN arme ON dispose.idArme = arme.idArme
+    -> JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage
+    -> JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+    -> WHERE typearme.libelle LIKE 'a%';
++-------------+
+| nom         |
++-------------+
+| wawaf       |
+| headhunter  |
+| lartificier |
++-------------+
+3 rows in set (0.01 sec)
+
+
+_______________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+SELECT typearme.libelle, arme.nom
+    -> FROM typearme
+    -> LEFT JOIN arme ON typearme.idTypeArme = arme.idTypeArme;
++----------+-----------------------+
+| libelle  | nom                   |
++----------+-----------------------+
+| Hache    | HacheDuLyon           |
+| Hache    | HacheDeFeu            |
+| Hache    | HachedeGlace          |
+| Arc      | Arc en bois           |
+| Arc      | Arc en bois debene    |
+| Arc      | Arc des anges         |
+| Epee     | Excalibur             |
+| Arbalete | Arbalete givrante     |
+| Masse    | NULL                  |
+| Dague    | Dague de voleur       |
+| Dague    | Dage de contrebandier |
++----------+-----------------------+
+11 rows in set (0.00 sec)
+
+
+
+
+
+ SELECT typearme.libelle, arme.nom
+    -> FROM arme
+    -> RIGHT JOIN typearme ON arme.idTypeArme = typearme.idTypeArme;
++----------+-----------------------+
+| libelle  | nom                   |
++----------+-----------------------+
+| Hache    | HacheDuLyon           |
+| Hache    | HacheDeFeu            |
+| Hache    | HachedeGlace          |
+| Arc      | Arc en bois           |
+| Arc      | Arc en bois debene    |
+| Arc      | Arc des anges         |
+| Epee     | Excalibur             |
+| Arbalete | Arbalete givrante     |
+| Masse    | NULL                  |
+| Dague    | Dague de voleur       |
+| Dague    | Dage de contrebandier |
++----------+-----------------------+
+11 rows in set (0.00 sec)
+
+
+
+
+
+
+
+SELECT arme.idArme, arme.nom, arme.levelMin, arme.degat, arme.idTypeArme, personnage.idPersonnage, personnage.nom, personnage.surnom, personnage.level, personnage.idArmeUtilise, personnage.idClasse
+    -> FROM arme
+    -> LEFT JOIN personnage ON arme.idArme = personnage.idArmeUtilise
+    -> ORDER BY arme.levelMin;
++--------+-----------------------+----------+-------+------------+--------------+--------------+-------------+-------+---------------+----------+
+| idArme | nom                   | levelMin | degat | idTypeArme | idPersonnage | nom          | surnom      | level | idArmeUtilise | idClasse |
++--------+-----------------------+----------+-------+------------+--------------+--------------+-------------+-------+---------------+----------+
+|      1 | HacheDuLyon           |        1 |    10 |          1 |         NULL | NULL         | NULL        |  NULL |          NULL |     NULL |
+|      4 | Arc en bois           |        1 |     5 |          2 |         NULL | NULL         | NULL        |  NULL |          NULL |     NULL |
+|      9 | Dague de voleur       |        2 |     7 |          6 |         NULL | NULL         | NULL        |  NULL |          NULL |     NULL |
+|      2 | HacheDeFeu            |        3 |    20 |          1 |            3 | guerrierDu09 | baba        |    10 |             2 |        1 |
+|      8 | Arbalete givrante     |        4 |    15 |          4 |            6 | lartificier  | lartificier |     7 |             8 |        2 |
+|      5 | Arc en bois debene    |        5 |    15 |          2 |            5 | larcher      | NULL        |     5 |             5 |        2 |
+|     10 | Dage de contrebandier |        6 |    14 |          6 |            7 | roguiBalbao  | elBoxor     |    10 |            10 |        3 |
+|      3 | HachedeGlace          |        7 |    35 |          1 |            2 | leWar        | ptitWar     |     8 |             3 |        1 |
+|      6 | Arc des anges         |        9 |    30 |          2 |            4 | headhunter   | HH          |    10 |             6 |        2 |
+|      7 | Excalibur             |       10 |    65 |          3 |            1 | wawaf        | BestWarrior |    10 |             7 |        1 |
++--------+-----------------------+----------+-------+------------+--------------+--------------+-------------+-------+---------------+----------+
+10 rows in set (0.01 sec)
+
+
+
+
+
+
+SELECT arme.idArme, arme.nom, personnage.nom
+    -> FROM dispose
+    -> RIGHT JOIN arme ON dispose.idArme = arme.idArme
+    -> LEFT JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage
+    -> ORDER BY arme.idArme;
++--------+-----------------------+--------------+
+| idArme | nom                   | nom          |
++--------+-----------------------+--------------+
+|      1 | HacheDuLyon           | wawaf        |
+|      1 | HacheDuLyon           | leWar        |
+|      2 | HacheDeFeu            | wawaf        |
+|      2 | HacheDeFeu            | leWar        |
+|      2 | HacheDeFeu            | guerrierDu09 |
+|      3 | HachedeGlace          | wawaf        |
+|      3 | HachedeGlace          | leWar        |
+|      3 | HachedeGlace          | guerrierDu09 |
+|      4 | Arc en bois           | wawaf        |
+|      4 | Arc en bois           | headhunter   |
+|      4 | Arc en bois           | lartificier  |
+|      5 | Arc en bois debene    | headhunter   |
+|      6 | Arc des anges         | NULL         |
+|      7 | Excalibur             | guerrierDu09 |
+|      7 | Excalibur             | larcher      |
+|      8 | Arbalete givrante     | lartificier  |
+|      9 | Dague de voleur       | wawaf        |
+|      9 | Dague de voleur       | roguiBalbao  |
+|     10 | Dage de contrebandier | roguiBalbao  |
++--------+-----------------------+--------------+
+19 rows in set (0.00 sec)
 
 
 
