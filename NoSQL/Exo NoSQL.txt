@@ -1,0 +1,534 @@
+______________________________________________________________________________________________________________________________
+
+							INTRO
+______________________________________________________________________________________________________________________________
+
+C:\Users\ebuid>mongosh
+Current Mongosh Log ID: 66389899fb5b9f785f46b798
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.9
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-05-06T09:20:27.750+02:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use monde
+switched to db monde
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 1
+_____________________________________________________________________________________________________________________________
+
+
+monde> db.world.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+239
+monde>
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 2
+_____________________________________________________________________________________________________________________________
+
+
+
+monde> db.world.find({}, {Continent :1})
+[
+  { _id: ObjectId('663897fcafb434b50653a5e4'), Continent: 'Asia' },
+  { _id: ObjectId('663897fcafb434b50653a5e5'), Continent: 'Europe' },
+  { _id: ObjectId('663897fcafb434b50653a5e6'), Continent: 'Asia' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5e7'),
+    Continent: 'North America'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5e8'), Continent: 'Oceania' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5e9'),
+    Continent: 'Antarctica'
+  },
+  {
+    _id: ObjectId('663897fcafb434b50653a5ea'),
+    Continent: 'Antarctica'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5eb'), Continent: 'Europe' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5ec'),
+    Continent: 'North America'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5ed'), Continent: 'Europe' },
+  { _id: ObjectId('663897fcafb434b50653a5ee'), Continent: 'Oceania' },
+  { _id: ObjectId('663897fcafb434b50653a5ef'), Continent: 'Africa' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5f0'),
+    Continent: 'South America'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5f1'), Continent: 'Asia' },
+  { _id: ObjectId('663897fcafb434b50653a5f2'), Continent: 'Asia' },
+  { _id: ObjectId('663897fcafb434b50653a5f3'), Continent: 'Africa' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5f4'),
+    Continent: 'North America'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5f5'), Continent: 'Europe' },
+  {
+    _id: ObjectId('663897fcafb434b50653a5f6'),
+    Continent: 'North America'
+  },
+  { _id: ObjectId('663897fcafb434b50653a5f7'), Continent: 'Africa' }
+]
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 3
+_____________________________________________________________________________________________________________________________
+
+
+monde> db.world.findOne( {Name :"France"})
+{
+  _id: ObjectId('663897fcafb434b50653a646'),
+  Code: 'FRA',
+  Name: 'France',
+  Continent: 'Europe',
+  Region: 'Western Europe',
+  SurfaceArea: 551500,
+  IndepYear: 843,
+  Population: 59225700,
+  LifeExpectancy: 78.8,
+  GNP: 1424285,
+  GNPOld: 1392448,
+  LocalName: 'France',
+  GovernmentForm: 'Republic',
+  HeadOfState: 'Jacques Chirac',
+  Capital: {
+    ID: 2974,
+    Name: 'Paris',
+    District: 'Île-de-France',
+    Population: 2125246
+  },
+  Code2: 'FR',
+  Cities: [
+    {
+      ID: 2975,
+      Name: 'Marseille',
+      District: 'Provence-Alpes-Côte',
+      Population: 798430
+    },
+    {
+      ID: 2976,
+      Name: 'Lyon',
+      District: 'Rhône-Alpes',
+      Population: 445452
+    },
+    {
+      ID: 2977,
+      Name: 'Toulouse',
+      District: 'Midi-Pyrénées',
+      Population: 390350
+    },
+    {
+      ID: 2978,
+      Name: 'Nice',
+      District: 'Provence-Alpes-Côte',
+      Population: 342738
+    },
+    {
+      ID: 2979,
+      Name: 'Nantes',
+      District: 'Pays de la Loire',
+      Population: 270251
+    },
+    {
+      ID: 2980,
+      Name: 'Strasbourg',
+      District: 'Alsace',
+      Population: 264115
+    },
+    {
+      ID: 2981,
+      Name: 'Montpellier',
+      District: 'Languedoc-Roussillon',
+      Population: 225392
+    },
+    {
+      ID: 2982,
+      Name: 'Bordeaux',
+      District: 'Aquitaine',
+      Population: 215363
+    },
+    {
+      ID: 2983,
+      Name: 'Rennes',
+      District: 'Haute-Normandie',
+      Population: 206229
+    },
+    {
+      ID: 2984,
+      Name: 'Le Havre',
+      District: 'Champagne-Ardenne',
+      Population: 190905
+    },
+    {
+      ID: 2985,
+      Name: 'Reims',
+      District: 'Nord-Pas-de-Calais',
+      Population: 187206
+    },
+    {
+      ID: 2986,
+      Name: 'Lille',
+      District: 'Rhône-Alpes',
+      Population: 184657
+    },
+    {
+      ID: 2987,
+      Name: 'St-Étienne',
+      District: 'Bretagne',
+      Population: 180210
+    },
+    {
+      ID: 2988,
+      Name: 'Toulon',
+      District: 'Provence-Alpes-Côte',
+      Population: 160639
+    },
+    {
+      ID: 2989,
+      Name: 'Grenoble',
+      District: 'Rhône-Alpes',
+      Population: 153317
+    },
+    {
+      ID: 2990,
+      Name: 'Angers',
+      District: 'Pays de la Loire',
+      Population: 151279
+    },
+    {
+      ID: 2991,
+      Name: 'Dijon',
+      District: 'Bourgogne',
+      Population: 149867
+    },
+    {
+      ID: 2992,
+      Name: 'Brest',
+      District: 'Bretagne',
+      Population: 149634
+    },
+    {
+      ID: 2993,
+      Name: 'Le Mans',
+      District: 'Pays de la Loire',
+      Population: 146105
+    },
+    {
+      ID: 2994,
+      Name: 'Clermont-Ferrand',
+      District: 'Auvergne',
+      Population: 137140
+    },
+    {
+      ID: 2995,
+      Name: 'Amiens',
+      District: 'Picardie',
+      Population: 135501
+    },
+    {
+      ID: 2996,
+      Name: 'Aix-en-Provence',
+      District: 'Provence-Alpes-Côte',
+      Population: 134222
+    },
+    {
+      ID: 2997,
+      Name: 'Limoges',
+      District: 'Limousin',
+      Population: 133968
+    },
+    {
+      ID: 2998,
+      Name: 'Nîmes',
+      District: 'Languedoc-Roussillon',
+      Population: 133424
+    },
+    { ID: 2999, Name: 'Tours', District: 'Centre', Population: 132820 },
+    {
+      ID: 3000,
+      Name: 'Villeurbanne',
+      District: 'Rhône-Alpes',
+      Population: 124215
+    },
+    {
+      ID: 3001,
+      Name: 'Metz',
+      District: 'Lorraine',
+      Population: 123776
+    },
+    {
+      ID: 3002,
+      Name: 'Besançon',
+      District: 'Franche-Comté',
+      Population: 117733
+    },
+    {
+      ID: 3003,
+      Name: 'Caen',
+      District: 'Basse-Normandie',
+      Population: 113987
+    },
+    {
+      ID: 3004,
+      Name: 'Orléans',
+      District: 'Centre',
+      Population: 113126
+    },
+    {
+      ID: 3005,
+      Name: 'Mulhouse',
+      District: 'Alsace',
+      Population: 110359
+    },
+    {
+      ID: 3006,
+      Name: 'Rouen',
+      District: 'Haute-Normandie',
+      Population: 106592
+    },
+    {
+      ID: 3007,
+      Name: 'Boulogne-Billancourt',
+      District: 'Île-de-France',
+      Population: 106367
+    },
+    {
+      ID: 3008,
+      Name: 'Perpignan',
+      District: 'Languedoc-Roussillon',
+      Population: 105115
+    },
+    {
+      ID: 3009,
+      Name: 'Nancy',
+      District: 'Lorraine',
+      Population: 103605
+    },
+    {
+      ID: 3010,
+      Name: 'Roubaix',
+      District: 'Nord-Pas-de-Calais',
+      Population: 96984
+    },
+    {
+      ID: 3011,
+      Name: 'Argenteuil',
+      District: 'Île-de-France',
+      Population: 93961
+    },
+    {
+      ID: 3012,
+      Name: 'Tourcoing',
+      District: 'Nord-Pas-de-Calais',
+      Population: 93540
+    },
+    {
+      ID: 3013,
+      Name: 'Montreuil',
+      District: 'Île-de-France',
+      Population: 90674
+    }
+  ],
+  OffLang: [ { Language: 'French', Percentage: 93.6 } ],
+  NotOffLang: [
+    { Language: 'Arabic', Percentage: 2.5 },
+    { Language: 'Italian', Percentage: 0.4 },
+    { Language: 'Portuguese', Percentage: 1.2 },
+    { Language: 'Spanish', Percentage: 0.4 },
+    { Language: 'Turkish', Percentage: 0.4 }
+  ]
+}
+
+
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 4
+_____________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+monde>  db.world.find({ Continent: "Europe", Population: { $lt: 100000 } }, {Name: 1})
+[
+  { _id: ObjectId('663897fcafb434b50653a5eb'), Name: 'Andorra' },
+  { _id: ObjectId('663897fcafb434b50653a628'), Name: 'Faroe Islands' },
+  { _id: ObjectId('663897fcafb434b50653a630'), Name: 'Gibraltar' },
+  { _id: ObjectId('663897fcafb434b50653a65a'), Name: 'Liechtenstein' },
+  { _id: ObjectId('663897fcafb434b50653a661'), Name: 'Monaco' },
+  {
+    _id: ObjectId('663897fcafb434b50653a69d'),
+    Name: 'Svalbard and Jan Mayen'
+  },
+  { _id: ObjectId('663897fcafb434b50653a6a3'), Name: 'San Marino' },
+  {
+    _id: ObjectId('663897fcafb434b50653a6c0'),
+    Name: 'Holy See (Vatican City State)'
+  }
+]
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 5
+_____________________________________________________________________________________________________________________________
+
+
+
+
+monde> db.world.find({Continent : "Oceania", IndepYear : {$ne : "NA"}})
+
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 6
+_____________________________________________________________________________________________________________________________
+
+
+
+
+monde> db.world.aggregate([{ $group: { _id: "$Continent", totalSurface: { $sum: "$SurfaceArea" }}}, { $sort: { totalSurface: -1 }}, { $limit: 1 }]);
+[ { _id: 'Asia', totalSurface: 31881005 } ]
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 7
+_____________________________________________________________________________________________________________________________
+
+
+
+
+monde> db.world.aggregate([{ $group: { _id: "$Continent", totalPays: { $sum: 1 }, totalPop: { $sum: "$Population" }, totalIndep: { $sum: {$cond: [{$ne:["$IndepYear", "NA"]}, 1, 0] }}} }])
+[
+  { _id: 'Africa', totalPays: 58, totalPop: 784475000, totalIndep: 53 },
+  { _id: 'Antarctica', totalPays: 5, totalPop: 0, totalIndep: 0 },
+  {
+    _id: 'Asia',
+    totalPays: 51,
+    totalPop: Long('3705025700'),
+    totalIndep: 47
+  },
+  {
+    _id: 'South America',
+    totalPays: 14,
+    totalPop: 345780000,
+    totalIndep: 12
+  },
+  { _id: 'Europe', totalPays: 46, totalPop: 730074600, totalIndep: 43 },
+  {
+    _id: 'North America',
+    totalPays: 37,
+    totalPop: 482993000,
+    totalIndep: 23
+  },
+  { _id: 'Oceania', totalPays: 28, totalPop: 30401150, totalIndep: 14 }
+]
+
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 8
+_____________________________________________________________________________________________________________________________
+
+
+
+
+monde> db.world.find({Name: 'France'}, {Cities: {Name: 1, Population:1}})
+[
+  {
+    _id: ObjectId('663897fcafb434b50653a646'),
+    Cities: [
+      { Name: 'Marseille', Population: 798430 },
+      { Name: 'Lyon', Population: 445452 },
+      { Name: 'Toulouse', Population: 390350 },
+      { Name: 'Nice', Population: 342738 },
+      { Name: 'Nantes', Population: 270251 },
+      { Name: 'Strasbourg', Population: 264115 },
+      { Name: 'Montpellier', Population: 225392 },
+      { Name: 'Bordeaux', Population: 215363 },
+      { Name: 'Rennes', Population: 206229 },
+      { Name: 'Le Havre', Population: 190905 },
+      { Name: 'Reims', Population: 187206 },
+      { Name: 'Lille', Population: 184657 },
+      { Name: 'St-Étienne', Population: 180210 },
+      { Name: 'Toulon', Population: 160639 },
+      { Name: 'Grenoble', Population: 153317 },
+      { Name: 'Angers', Population: 151279 },
+      { Name: 'Dijon', Population: 149867 },
+      { Name: 'Brest', Population: 149634 },
+      { Name: 'Le Mans', Population: 146105 },
+      { Name: 'Clermont-Ferrand', Population: 137140 },
+      { Name: 'Amiens', Population: 135501 },
+      { Name: 'Aix-en-Provence', Population: 134222 },
+      { Name: 'Limoges', Population: 133968 },
+      { Name: 'Nîmes', Population: 133424 },
+      { Name: 'Tours', Population: 132820 },
+      { Name: 'Villeurbanne', Population: 124215 },
+      { Name: 'Metz', Population: 123776 },
+      { Name: 'Besançon', Population: 117733 },
+      { Name: 'Caen', Population: 113987 },
+      { Name: 'Orléans', Population: 113126 },
+      { Name: 'Mulhouse', Population: 110359 },
+      { Name: 'Rouen', Population: 106592 },
+      { Name: 'Boulogne-Billancourt', Population: 106367 },
+      { Name: 'Perpignan', Population: 105115 },
+      { Name: 'Nancy', Population: 103605 },
+      { Name: 'Roubaix', Population: 96984 },
+      { Name: 'Argenteuil', Population: 93961 },
+      { Name: 'Tourcoing', Population: 93540 },
+      { Name: 'Montreuil', Population: 90674 }
+    ]
+  }
+]
+
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 9
+_____________________________________________________________________________________________________________________________
+
+
+
+
+
+monde> db.world.findOne({"Code":"FRA"},{"Capital.District":0, "Capital.ID":0}).Capita
+l
+{ Name: 'Paris', Population: 2125246 }
+
+
+
+_____________________________________________________________________________________________________________________________
+
+							EXO 10
+_____________________________________________________________________________________________________________________________
+
