@@ -189,3 +189,244 @@
 // }else{
 //     echo "Année non bissextile";
 // }
+
+
+// 
+
+// $notes=[];
+// for($i= 0;$i<9;$i++){
+//     $notes[$i] = readline("Entrez une valeur " . ($i + 1) . " : ");
+//     while (!is_numeric($notes[$i]) || $notes[$i] < 1 || $notes[$i] > 9) {
+//         echo "Entrez un nombre valide !\n";
+//         $notes[$i] = readline("Entrez une nouvelle valeur (entre 0 et 10). " . ($i + 1) . " : ");
+//     }
+// }
+
+// Calculer la moyenne
+// $sum = array_sum($notes);
+// $moy = $sum/count($notes);
+// echo "Voici la moyenne des valeurs : " . $moy;
+
+
+// EXERCICE 2
+
+// $tab = [];
+
+// $saisie1 = readline('écrit le nombre de valeur que tu va entrer: ');
+
+// for ($i=0; $i < $saisie1; $i++) { 
+//     $saisie2 = readline('ecrit une valeur a ajouter au tableau: ');
+//     $tab[] = $saisie2;
+// }
+
+// $positives = 0;
+// $negatives = 0;
+
+// foreach ($tab as $value) {
+
+//     if ($value < 0){
+//         $negatives++;
+//     }elseif ($value > 0)
+//     $positives++;
+// }
+
+// echo "nombre de valeur negative = " , $negatives , "\n";
+// echo "nombre de valeur positive = " , $positives , "\n";
+
+
+
+// EXERCICE 3
+
+// $tab = [1, 8, 3, 4, 5];
+// $total = 0;
+
+// for ($i = 0; $i < count($tab); $i++) { 
+//     $total += $tab[$i];
+// }
+
+// echo "Total : " . $total;
+
+
+
+// EXERCICE 4
+
+// function afficherTab($tab, $nomTab){
+//     echo "$nomTab : ";
+//     foreach($tab as $index => $valeur){ 
+//         echo "$valeur ";
+//     }
+//     echo "\n";
+// }
+
+// $tab_1 = [4, 8, 7, 9, 1, 5, 4, 6];
+// $tab_2 = [7, 6, 5, 2, 1, 3, 7, 4];
+
+// afficherTab($tab_1, "Tableau 1");
+// afficherTab($tab_2, "Tableau 2");
+
+
+// for($i=0; $i<count($tab_1); $i++){
+//     $tab_3[$i] = $tab_1[$i] + $tab_2[$i];
+// }
+
+// afficherTab($tab_3, "Tableau 3");
+
+
+
+
+
+// EXERCICE 5
+
+// $nombreDeValeurs = readline("Saisie combien tu veux de valeur ? ");
+
+// $tab = [];
+
+// for ($i = 0; $i < $nombreDeValeurs; $i++) {
+//     $valeur = readline("Saisie une valeur") . ($i + 1) . ": ";
+//     $tab[] = $valeur;
+// }
+
+// $upValeur = $tab[0];
+// $position = 0;
+
+// for ($i = 1; $i < count($tab); $i++) {
+//     if ($tab[$i] > $upValeur) {
+//         $upValeur = $tab[$i];
+//         $position = $i;
+//     }
+// }
+
+// echo "La plus grande valeur est " . $upValeur . " à la position " . ($position + 1) . ".\n";
+
+
+
+// EXERCICE 6
+
+// $arrayLength = readline("Veuillez entrer la taille du tableau : ");
+// $arr = [];
+
+// for ($i = 0; $i < $arrayLength; $i++) {
+//     $arr[$i] = readline("Veuillez entrer une note : ");
+// }
+
+// $average = array_sum($arr) / $arrayLength;
+
+// echo "moyenne : " . $average . "\n";
+
+// foreach ($arr as $value) {
+//     if ($value > $average) {
+//         echo $value . "\n";
+//     }
+// }
+
+
+
+
+
+// EXERCICE 7
+
+// $prix = [5, 50, 23, 11];
+// $quantite = [10, 1, 4, 3];  
+// $tab3 = [];
+
+// for ($i = 0; $i < count($prix); $i++) {
+//     $tab3[] = $prix[$i] * $quantite[$i]; 
+// }
+
+// foreach ($tab3 as $value) {
+//     $value;
+// }
+
+// $total = array_sum($tab3);
+// echo "La somme totale est : " . $total;
+
+
+
+// ________________________________ LES TABLEAUX ASSOCIATIFS
+
+
+// _________ EXERCICE 9.1
+
+// $chomage = array("Autriche" => 4.9,
+//                 "Allemagne" => 9.3,
+//                 "Danemark" => 4.8,
+//                 "Espagne" => 9.4,
+//                 "France" => 9.7);
+
+
+// ___________________________ 1)
+
+
+// foreach ($chomage as $key => $value) { 
+
+
+// echo  "Taux de chomage de $key : $value \n";
+
+// }
+
+
+
+// ___________________________ 2)
+
+
+// foreach ($chomage as $key => $value) {
+//     if($value < 5)
+
+//     echo "Pays inférieur à 5% : $key : $value \n";
+// }
+
+
+// ____________________________ 3)
+
+
+// foreach ($chomage as $key => $value) {
+//     asort($chomage);
+// }
+
+// echo array_key_first($chomage);
+
+
+
+
+
+
+// EXERCICE 9.2
+
+// ___________________________ 1)
+
+// $tabNotes = array("boucher"=>16, 
+//                 "bourdette"=>13,
+//                 "Nezuko"=>20,
+//                 "Osselait"=>17,
+//                 "Ryuk"=>8);
+
+// // foreach ($tabNotes as $key => $value){
+// //     echo "Nom : $key, Note : $value, ";
+// // }
+
+
+// // ____________________________ 2)
+
+// echo array_sum($tabNotes) / count($tabNotes);
+
+
+
+// EXERCICE 9.3
+
+$tabNotes = array("Pikachu"=>array(15, 18, 13),
+                "Bulbizarre"=>array(8, 19, 12),
+                "Carapuce"=>array(16, 11, 2),
+                "Salamèche"=>array(13, 14, 19),
+                "Osselait"=>array(20, 20, 20),
+                "Goupix"=>array(18, 9, 17),
+                "Togepi"=>array(13, 20, 18));
+
+// foreach($tabNotes as $key => $value){
+//     echo "Nom de l'élève : $key \n";
+//     echo "Note de l'élève :" .join(", ", $value). "\n";
+// }
+
+
+foreach ($tabNotes as $key => $value){
+    echo "Nom de l'élève : $key \n", "Moyenne de l'élève : " .array_sum($value)/count($value), "\n";
+}
