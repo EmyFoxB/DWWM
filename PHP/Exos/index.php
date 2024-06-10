@@ -413,20 +413,266 @@
 
 // EXERCICE 9.3
 
-$tabNotes = array("Pikachu"=>array(15, 18, 13),
-                "Bulbizarre"=>array(8, 19, 12),
-                "Carapuce"=>array(16, 11, 2),
-                "Salamèche"=>array(13, 14, 19),
-                "Osselait"=>array(20, 20, 20),
-                "Goupix"=>array(18, 9, 17),
-                "Togepi"=>array(13, 20, 18));
+// $tabNotes = array("Pikachu"=>array(15, 18, 13),
+//                 "Bulbizarre"=>array(8, 19, 12),
+//                 "Carapuce"=>array(16, 11, 2),
+//                 "Salamèche"=>array(13, 14, 19),
+//                 "Osselait"=>array(20, 20, 20),
+//                 "Goupix"=>array(18, 9, 17),
+//                 "Togepi"=>array(13, 20, 18));
 
-// foreach($tabNotes as $key => $value){
-//     echo "Nom de l'élève : $key \n";
-//     echo "Note de l'élève :" .join(", ", $value). "\n";
+// // foreach($tabNotes as $key => $value){
+// //     echo "Nom de l'élève : $key \n";
+// //     echo "Note de l'élève :" .join(", ", $value). "\n";
+// // }
+
+
+// foreach ($tabNotes as $key => $value){
+//     echo "Nom de l'élève : $key \n", "Moyenne de l'élève : " .array_sum($value)/count($value), "\n";
 // }
 
 
-foreach ($tabNotes as $key => $value){
-    echo "Nom de l'élève : $key \n", "Moyenne de l'élève : " .array_sum($value)/count($value), "\n";
-}
+
+
+// ____________________________________________EXERCICE 8.1
+
+// $T = [
+//     [54, 62, 2, 46, 31, 41, 94, 6],
+//     [78, 62, 5, 43, 57, 91, 7, 32],
+//     [87, 12, 42, 8, 64, 22, 3, 17],
+//     [41, 12, 68, 4, 9, 26, 43, 55],
+//     [62, 49, 57, 36, 1, 6, 44, 13],
+//     [98, 74, 69, 27, 50, 18, 9, 65],
+//     [71, 20, 53, 4, 16, 58, 84, 47],
+//     [99, 56, 83, 2, 67, 41, 28, 15],
+//     [11, 61, 17, 72, 77, 95, 57, 37],
+//     [90, 23, 61, 85, 4, 94, 69, 33],
+//     [88, 14, 6, 59, 62, 24, 83, 91],
+//     [75, 66, 77, 82, 7, 96, 44, 18]
+// ];
+
+// $maxValue = $T[0][0];
+
+
+// for ($i = 0; $i < count($T); $i++) {
+
+//     for ($j = 0; $j < count($T[$i]); $j++) {
+
+//         if ($T[$i][$j] > $maxValue) {
+//             $maxValue = $T[$i][$j];
+//         }
+//     }
+// }
+
+
+// echo $maxValue;
+
+
+
+// _____________________________ EXERCICE 8.2
+
+// $etoile = "*";
+
+// $tab = [];
+
+
+// for ($i=1; $i <= 7; $i++) { 
+// $ligne = str_repeat($etoile, $i);
+// array_push($tab, $ligne);
+// }
+
+// for ($i= 6 ; $i >= 1 ; $i--) { 
+//     $ligne = str_repeat($etoile , $i);
+//     array_push($tab, $ligne);
+// }
+
+// foreach ($tab as $ligne) {
+// echo $ligne , "\n";
+// }
+
+
+
+
+// $tab =[];
+// $etoile = "X";
+// $rond = "0" ;
+
+// for ($i=0; $i < 8; $i++) { 
+//     $ligne = str_repeat($etoile, $i);
+    
+//     if ($i < 3 || $i > 6) {
+//         array_push($tab, $ligne);
+//     }else{
+//         $ligne = str_repeat($etoile, 1) . str_repeat($rond, $i - 2) . str_repeat($etoile, 1);
+//         array_push($tab, $ligne);
+
+//     }
+// }
+
+// foreach ($tab as $ligne) {
+//     echo $ligne , "\n";
+// }
+
+
+
+//  ________________________________________ LES FONCTIONS ___________________________
+
+
+
+// __________________________________________ EXERCICE 10.1
+
+
+
+// require "fonctions.php";
+
+// $prixHT = readline("Entrez le prix HT : ");
+// $nombre = readline("Entrez le nombre d'articles : ");
+
+// echo calculTTC($prixHT, $nombre);
+
+
+
+
+// __________________________________________ EXERRCICE 10.2
+
+// $nombre1 = readline('Entrez un nombre entier positif');
+// $nombre2 = readline('Entrez un deuxième nombre entier positif');
+
+// echo "le PGCD (Plus grand diviseur commun) de $nombre1 et de $nombre2 est de :" .PGCD($nombre1, $nombre2);
+
+
+
+
+// ______________________________________ EXERCICE REPERTOIRE 1
+
+
+// $repertoire = [[]];
+
+
+// // ______________________________________ EXERCICE REPERTOIRE 2
+
+
+
+// require "fonctions.php";
+
+// $contact = readline("Entrez un nom : ");
+
+// print_r($contact);
+
+// ______________________________________ EXERCICE REPERTOIRE 3
+
+
+
+// $nombre = rand(1, 9);
+
+// echo "Table de multiplication pour : $nombre\n";
+
+// for ($i = 1; $i <= 10; $i++) {
+//     $resultat = $nombre * $i;
+//     echo "$nombre x $i = $resultat\n";
+// } 
+
+
+
+
+
+
+
+
+// // Tableau vide pour pouvoir y mettre des contacts plus tard
+// $repertoire = [];
+
+// // Fonction pour ajouter des contacts
+// function PushTabl($nom, $numero) {
+//     global $repertoire;
+//     array_push($repertoire, [$nom, $numero]);
+//     echo "**********************************************\n";
+//     echo "Contact ajouté : $nom, $numero\n \n";
+//     echo "**********************************************\n";
+// }
+
+// // Fonction pour rechercher un contact
+// function recherche($nom) {
+//     global $repertoire;
+//     foreach ($repertoire as $contact) {
+//         if ($contact[0] === $nom) {
+//             return $contact[1];
+//         }
+//     }
+//     return "Contact non trouvé \n";
+// }
+
+// // Fonction pour voir tout les contacts
+// function toutVoir() {
+//     global $repertoire;
+//     if (count($repertoire) === 0) {
+//         echo "**********************************\n";
+//         echo "Le répertoire est vide.\n";
+//         echo "**********************************\n";
+//     } else {
+//         foreach ($repertoire as $contact) {
+            
+//             echo "\n".$contact[0] . " " . $contact[1]."\n";
+            
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Boucle do While pour rentrer au moin 1 fois dans la boucle
+// do {
+// $choix1 = 1;
+// $choix2 = 2;
+// $choix3 = 3;
+
+// echo "Vous souhaitez :\n\n $choix1 : Ajouter un nouveau contact\n $choix2 : Recherchez un contact\n $choix3 : Rechercher Tout contact\n\n";
+
+// $choix = readline("Que voulez-vous faire ? ");
+
+// // Switch pour traiter le choix que l'utilisateur veux faire
+//     switch ($choix) {
+//         case $choix1:
+//             // Rappel de fonction pour ajouter des contacts
+//         $nom = readline("Entrez le prénom de la personne : ");
+//         $numero = readline("Entrez le numéro de téléphone : ");
+//         PushTabl($nom, $numero);
+//             break;
+    
+//         case $choix2:
+//             // Rappel de fonction pour rechercher un contact
+//         $nomRecherche = readline("Entrez le prénom de la personne à rechercher : ");
+//         $resultatRecherche = recherche($nomRecherche);
+//         echo "**********************************************************************\n";
+//         echo $nomRecherche." a ce numéro : ". $resultatRecherche. "\n";
+//         echo "**********************************************************************\n";
+//             break;
+    
+//         case $choix3:
+//             // Rappel de fonction pour voir tout les contacts
+//         toutVoir();
+//             break;
+    
+//         default:
+//         // Si il fait un choix hors de ceux proposé
+//             echo "Merci de saisir un choix valide !";
+//             break;
+//     }
+//     // Demande pour continuer ou sortir de la boucle
+//     $choix = readline("Voulez-vous faire autre chose dans votre menu ? ");
+//     // Strtolower pour que même si il met en majuscule ca met en minuscule et valide la condition
+//     $choix = strtolower($choix);
+// } while ($choix == "oui" || $choix == "yes" || $choix == "y");
+
+// // Fin de programme et de la boucle
+// echo "Merci au revoir";
