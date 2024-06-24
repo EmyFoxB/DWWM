@@ -1,9 +1,13 @@
 <?php
 
-require_once "heritage.php";
+require_once "Employe.php";
+require_once "manager.php";
 
-$alice = new Employe("Alice", "50000");
+$employe = new Employe("Alice", "50000");
+$manager = new Manager("Bob", "70000", []);
 
-$alice->afficherDetails();
+$employe-> afficherDetails();
+$manager->ajouterEmploye($employe);
+$manager->afficherDetail();
 
 ?>
