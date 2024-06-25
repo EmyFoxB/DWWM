@@ -45,7 +45,7 @@ class TriangleRectangle
         // Calcul du périmètre
         $perimetreTriangle = $this->base + $this->hauteur + $hypotenuse;
 
-        echo "Le périmètre du triangle rectangle est de : $perimetreTriangle cm. <br>";
+        echo "Le périmètre du triangle rectangle est de : " . round($perimetreTriangle, 2) . "cm. <br>";
     }
 
     public function aireTriangle()
@@ -56,7 +56,7 @@ class TriangleRectangle
     }
 
     public function afficherTriangle(){
-        echo "La base du triangle est de $this->base cm.<br> La hauteur du triangle est de $this->hauteur cm.<br>";
+        echo "Base : $this->base cm.<br> Hauteur : $this->hauteur cm.<br>";
         $this->perimetreTriangle();
         $this->aireTriangle();
         echo "********************************<br>";

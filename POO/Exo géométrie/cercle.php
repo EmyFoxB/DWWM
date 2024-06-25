@@ -23,7 +23,19 @@ class Cercle{
 
     public function perimetreCercle(){
         $perimetreCercle = M_PI * $this->diametre;
-        echo "Le périmètre du cercle et de $perimetreCercle cm.<br>";
+        echo "Le périmètre du cercle est de " . round($perimetreCercle, 2) . " cm.<br>";
+    }
+
+    public function aireCercle(){
+        $aireCercle = (($this->diametre/2)*($this->diametre/2)) * M_PI;
+        echo "L'aire du cercle est de " . round($aireCercle, 2) . " cm².<br>";
+    }
+
+    public function afficherCercle(){
+        echo "Diamètre : $this->diametre cm.<br>";
+        $this->perimetreCercle();
+        $this->aireCercle();
+        echo "********************************<br>";
     }
 
 }
