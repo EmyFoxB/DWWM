@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+

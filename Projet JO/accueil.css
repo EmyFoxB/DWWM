@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./Images/bg-header\ 1.png);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 6rem;
+    color: whitesmoke;
+    letter-spacing: 1rem;
+    text-shadow: 8px 9px 11px black;
+    margin-top: 38vh;
+    margin-left: 10vw;
+}
+
+p{
+    font-family: serif;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: 0.3rem;
+    text-shadow: 3px 4px 3px black;
+    margin-left: 11vw;
+}
