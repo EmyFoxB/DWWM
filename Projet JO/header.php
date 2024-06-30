@@ -1,7 +1,5 @@
 <?php
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +10,8 @@
         <title>Barre de navigation</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body class="btemplate">
-        <header class="htemplate">
+    <body class="bheader">
+        <header class="hheader">
             <nav>
                 <li><a href="Accueil.php">ACCUEIL</a></li>
                 <li><a href="Equipes.php">ÉQUIPES</a></li>
@@ -22,9 +20,6 @@
                 <li><a href="Login.php">SE CONNECTER</a></li>
             </nav>
         </header>
-        
-    <footer>
-        <p class="pfooter">Copyright © 2024 - Tous droits réservés</p>
-    </footer>
+
 </body>
 </html>
