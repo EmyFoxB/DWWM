@@ -12,9 +12,9 @@ if(session_status() == PHP_SESSION_NONE){
     <link rel="stylesheet" href="style.css">
     <title>Projet JO 2024</title>
 </head>
-<body>
-    <header>
-        <nav>
+<body class="body-template">
+    <header class="header-template">
+        <nav class="nav-template">
             <ul>
                 <li><a href="index.php">ACCUEIL</a></li>
                 <li><a href="equipes.php">EQUIPES</a></li>
