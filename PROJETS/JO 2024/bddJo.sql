@@ -85,32 +85,3 @@ CREATE TABLE joue(
 	,CONSTRAINT joue_Equipes0_FK FOREIGN KEY (id_equipe) REFERENCES Equipes(id_equipe)
 )ENGINE=InnoDB;
 
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (1, 'France', 'Andrea GIANI', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (2, 'Slovénie', 'Gheorghe Crețu', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (3, 'Canada', 'Tuomas Sammelvuo', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (4, 'Serbie', 'Igor Kolaković', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (5, 'Pologne', 'Nikola Grbić', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (6, 'Italie', 'Ferdinando De Giorgi', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (7, 'Brésil', 'Bernardo Rocha de Rezende', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (8, 'Égypte', 'Hossam Hassan', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (9, 'Japon', 'Philippe Blain', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (10, 'États-Unis', 'John Speraw', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (11, 'Argentine', 'Marcelo Méndez', 'Masculin');
-INSERT INTO Equipes (id_equipe, pays, entraineur, sexe) VALUES (12, 'Allemagne', 'Alexander Waibl', 'Masculin');
-
-
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');
-INSERT INTO Joueurs (id_joueur, nom, prenom, ddn, poste) VALUES (1, 'CHINENYEZE', 'Barthélémy', 28/02/98, 'Central');

@@ -15,12 +15,12 @@ if (session_status() == PHP_SESSION_NONE) {
     <title>ACCUEIL</title>
 </head>
 
-<body>
+<body background="/Assets/Images/bg-accueil.png">
+
     <div class="accueil">
         <h2>VOLLEY BALL</h2>
         <p class="p-accueil">JEUX OLYMPIQUES 2024</p>
     </div>
-
 
 </body>
 

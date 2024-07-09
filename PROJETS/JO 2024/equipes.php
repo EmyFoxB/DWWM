@@ -177,3 +177,22 @@ $titre = "ÉQUIPES";
 $content = ob_get_clean();
 require "template.php";
 ?>
+
+<!-- 
+
+Recherche terminée dans 4 sites
+
+Les équipes féminines de volley-ball qualifiées pour les Jeux Olympiques de Paris 2024 sont les suivantes :
+
+France (pays hôte)
+Serbie (Tournoi de qualification olympique)
+Turquie (Tournoi de qualification olympique)
+République dominicaine (Tournoi de qualification olympique)
+Brésil (Tournoi de qualification olympique)
+États-Unis (Tournoi de qualification olympique)
+Pologne (Tournoi de qualification olympique)
+Italie (classement mondial)
+Chine (classement mondial)
+Japon (classement mondial)
+Pays-Bas (classement mondial)
+Kenya (classement mondial) -->
