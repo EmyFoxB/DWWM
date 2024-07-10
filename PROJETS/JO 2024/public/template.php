@@ -16,16 +16,16 @@ if(session_status() == PHP_SESSION_NONE){
     <header class="header-template">
         <nav class="nav-template">
             <ul>
-                <li><a href="index.php">ACCUEIL</a></li>
-                <li><a href="equipes.php">EQUIPES</a></li>
-                <li><a href="matchs.php">MATCHS</a></li>
-                <li><a href="histoire.php">HISTOIRE & RÈGLES</a></li>
-                <li><a href="login.php">CONNEXION</a></li>
+                <li><a href="../index.php">ACCUEIL</a></li>
+                <li><a href="/public/equipes.php">EQUIPES</a></li>
+                <li><a href="/public/matchs.php">MATCHS</a></li>
+                <li><a href="/public/histoire.php">HISTOIRE & RÈGLES</a></li>
+                <li><a href="/public/logi">CONNEXION</a></li>
             </ul>
         </nav>
+        <h1><?= $titre ?></h1>
     </header>
 
-    <h1><?= $titre ?></h1>
     <?= $content ?>
 
     <footer>

@@ -11,12 +11,15 @@ $titre = "ÉQUIPES";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:opsz@6..96&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>ÉQUIPES</title>
 </head>
 
 <body>
-    <section class="section-header">
+    <!-- <section class="section-header">
         <div class="liste-equipes">
             <div class="bloc-a">
                 <ul>
@@ -168,7 +171,7 @@ $titre = "ÉQUIPES";
                 diam vitae varius posuere.</p>
             <span><a href="">Accéder aux joueurs</a></span>
         </div>
-    </section>
+    </section> -->
 </body>
 
 </html>
@@ -177,22 +180,3 @@ $titre = "ÉQUIPES";
 $content = ob_get_clean();
 require "template.php";
 ?>
-
-<!-- 
-
-Recherche terminée dans 4 sites
-
-Les équipes féminines de volley-ball qualifiées pour les Jeux Olympiques de Paris 2024 sont les suivantes :
-
-France (pays hôte)
-Serbie (Tournoi de qualification olympique)
-Turquie (Tournoi de qualification olympique)
-République dominicaine (Tournoi de qualification olympique)
-Brésil (Tournoi de qualification olympique)
-États-Unis (Tournoi de qualification olympique)
-Pologne (Tournoi de qualification olympique)
-Italie (classement mondial)
-Chine (classement mondial)
-Japon (classement mondial)
-Pays-Bas (classement mondial)
-Kenya (classement mondial) -->
