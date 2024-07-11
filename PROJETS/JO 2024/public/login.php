@@ -14,23 +14,23 @@ ob_start();
 
 <body>
     <div class="div-form">
-        <p>CONNEXION</p>
+        <p class="p-login">CONNEXION</p>
 
-        <form action="" method="POST">
-            <input type="email" name="email" id="">
+        <form class="login-form" action="" method="POST">
+            <input type="email" name="email" value="Email" id="">
             <br>
-            <input type="password">
-            <input type="submit" value="Login">
-            <a href="">Identifiant/Mot de passe oublie</a>
+            <input type="password" value="Mot de passe">
+            <br>
+            <input class="btn-login" type="submit" value="Se connecter">
         </form>
 
-        <p>Pas encore de compte ? <a href="">Inscrivez-vous !</a></p>
+        <p class="p-compte">Pas encore de compte ? <a href="/public/inscription.php">Inscrivez-vous !</a></p>
     </div>
 </body>
 
 <?php
 $content = ob_get_clean();
-$titre = "Identification Espace Admin";
+$titre = "CONNEXION";
 require "template.php";
 ?>
 </html>

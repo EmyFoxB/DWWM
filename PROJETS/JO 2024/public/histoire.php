@@ -20,7 +20,7 @@ $titre = "HISTOIRE & RÈGLES";
     <section class="histoire-et-regles">
         <div class="div-histoire">
             <h3>HISTOIRE</h3>
-            <p>Le volleyball est né dans la même université que le basketball, à Springfield, dans le Massachusetts, en 1895.
+            <p class="p-histoire">Le volleyball est né dans la même université que le basketball, à Springfield, dans le Massachusetts, en 1895.
                 Le but de William G. Morgan, son inventeur, était de proposer une activité accessible aux personnes plus âgées,
                 et s’appelait à la base « mintonette ». Le volleyball s’exporte très rapidement, puisque dès le tout début du 20e siècle,
                 il se développe au Canada, puis à Cuba au Japon et dans d’autres pays d’Asie. Un demi-siècle plus tard, en 1947,
@@ -29,7 +29,7 @@ $titre = "HISTOIRE & RÈGLES";
         </div>
         <div class="div-regles">
             <h3>RÈGLES</h3>
-            <p>Le volleyball oppose des équipes de six joueurs qui sont départagées au meilleur des cinq sets,
+            <p class="p-regles">Le volleyball oppose des équipes de six joueurs qui sont départagées au meilleur des cinq sets,
                 sur un terrain de dix-huit mètres de long sur neuf mètres de large. Chaque set se joue en 25 points gagnants,
                 et si les deux équipes remportent deux sets chacune, le cinquième se joue cette fois en 15 points.<br><br>
 

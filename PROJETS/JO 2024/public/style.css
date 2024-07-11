@@ -4,12 +4,17 @@
     padding: 0;
 }
 
+/* TEMPLATE */
+
 .body-template {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url(./Assets/Images/bg-equipes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header-template {
@@ -37,6 +42,22 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    width: 100%;
+    height: 12vh;
+    background-color: black;
+    opacity: 70%;
+    align-content: center;
+    color: #FF8F0C;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
 footer {
     background-color: black;
     height: 8vh;
@@ -47,12 +68,7 @@ footer {
     align-items: center;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* ACCUEIL */
 
 .accueil {
     margin-bottom: 15vh;
@@ -63,7 +79,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 6rem;
-    text-shadow: 9px 12px 5px rgb(0 0 0 / 62%);
+    text-shadow: 5px 4px 8px #FF8F0C;
     letter-spacing: 1rem;
 }
 
@@ -77,18 +93,108 @@ h2 {
     text-decoration: overline;
 }
 
-h1 {
-    width: 100%;
-    height: 12vh;
-    background-color: black;
-    opacity: 70%;
+/* LOGIN */
+
+.div-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
-    letter-spacing: 1rem;
-    text-align: center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    height: 30vh;
+    width: 50vw;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.p-login{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.p-compte{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-login{
+    background-color: #FF8F0C;
+    color: #000000;
+    border: none;
+    width: 50%;
+}
+
+/* INSCRIPTION */
+
+.div-inscription{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 40vh;
+    width: 50vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-inscription{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.inscription-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-inscription{
+    background-color: #FF8F0C;
+    color: #000000;
+    border: none;
+    width: 50%;
+}
+
+/* HISTOIRE ET REGLES */
+
+.histoire-et-regles{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 50vh;
+    justify-content: space-evenly;
+}
+
+.div-histoire, .div-regles{
+    background-color: #313131;
+    opacity: 80%;
+    border-radius: 15px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: "Bodoni Moda SC", serif;
+    color: #FF8F0C;
+    letter-spacing: 0.2rem;
+}
+
+.p-histoire, .p-regles{
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
