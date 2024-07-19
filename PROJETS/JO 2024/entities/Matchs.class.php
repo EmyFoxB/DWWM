@@ -4,6 +4,7 @@ require_once '../dbConnect/MyDbConnection.php';
 
 class Rencontre
 {
+    private $pdo;
     public $equipeA;
     public $equipeB;
     public $date;
@@ -85,4 +86,23 @@ class Rencontre
 
         return $matchs;
     }
+
+
+public function updateMatch($idMatch, $equipeA, $equipeB, $date, $heure, $score) {
+
+    try {
+        $stmt = $this->pdo->prepare('UPDATE matchs SET equipeA = ?, equipeB = ?, date = ?, heure = ?, score = ? WHERE id = ?');
+        $stmt->execute([$equipeA, $equipeB, $date, $heure, $score, $idMatch]);
+
+        return "Match mis à jour avec succès.";
+    } catch (PDOException $e) {
+        return "Erreur : " . $e->getMessage();
+    }
+}
+
+public function getMatchById($idMatch) {
+    $stmt = $this->pdo->prepare('SELECT matchs.* FROM matchs WHERE matchs.id_match = ?');
+    $stmt->execute([$idMatch]);
+    return $stmt->fetch();
+}
 }

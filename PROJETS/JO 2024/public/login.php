@@ -24,27 +24,27 @@ if (isset($_POST['email'], $_POST['password'])) {
 }
 ?>
 
-<div class="login-container">
+
     <?php if (isset($error)) : ?>
         <p class="error"><?php echo htmlspecialchars($error); ?></p>
-        <?php elseif(isset($_SESSION['successMessage'])):?>
-            <p class="success"><?php echo htmlspecialchars($_SESSION['successMessage']); ?></p>
+    <?php elseif (isset($_SESSION['successMessage'])) : ?>
+        <p class="success"><?php echo htmlspecialchars($_SESSION['successMessage']); ?></p>
     <?php endif; ?>
-</div>
+
 <div class="div-form">
-        <p class="p-login">CONNEXION</p>
+    <p class="p-login">CONNEXION</p>
 
 
-            <form class="login-form"  method="POST">
-                <input type="email" name="email" value="Email" required>
-                <br>
-                <input type="password" name="password" value="Mot de passe" required>
-                <br>
-                <input class="btn-login" type="submit" value="Se connecter">
-            </form>
+    <form class="login-form" method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <br>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <br>
+        <input class="btn-login" type="submit" value="Se connecter">
+    </form>
 
-            <p class="p-compte">Pas encore de compte ? <a href="/public/inscription.php">Inscrivez-vous !</a></p>
-    </div>
+    <p class="p-compte">Pas encore de compte ? <a href="/public/inscription.php">Inscrivez-vous !</a></p>
+</div>
 
 <?php
 $content = ob_get_clean();

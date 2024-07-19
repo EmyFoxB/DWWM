@@ -8,9 +8,10 @@ require_once '../entities/Matchs.class.php';
 
 $titre = "MATCHS";
 
-
+session_start();
+$userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 $matchs = Rencontre::afficherRencontre();
-
+$auth = new Auth;
 
 ?>
 
@@ -32,7 +33,9 @@ $matchs = Rencontre::afficherRencontre();
             <th>Équipe A</th>
             <th>Équipe B</th>
             <th>Score</th>
+            <?php if($auth->estAdmin($userId)):?>
             <th>Actions</th>
+            <?php endif; ?>
         </tr>
 
         <?php foreach ($matchs as $match) : ?>
@@ -42,7 +45,9 @@ $matchs = Rencontre::afficherRencontre();
                 <td><?php echo htmlspecialchars($match->getEquipeA()); ?></td>
                 <td><?php echo htmlspecialchars($match->getEquipeB()); ?></td>
                 <td><?php echo htmlspecialchars($match->getScore()); ?></td>
-                <td><a href="update.php?id=<?php echo $match->getScore(); ?>">Modifier</a></td>
+                <?php if($auth->estAdmin($userId)): ?>
+                <td><a href="updateMatchs.php?id=<?php echo $match->getScore(); ?>">Modifier</a></td>
+                <?php endif; ?>
             </tr>
         <?php endforeach; ?>
     </table>

@@ -37,19 +37,20 @@ class User {
     //     }
     // }
 
-    // public function updateUser($id, $prenom, $email, $role) {
-    //     try {
-    //         $stmt = $this->pdo->prepare('UPDATE user SET prenom = ?, email = ? WHERE id = ?');
-    //         $stmt->execute([$prenom, $email, $id]);
+    public function updateUser($id, $prenom, $email, $password, $role) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        try {
+            $stmt = $this->pdo->prepare('UPDATE user SET prenom = ?, email = ?, pwd = ? WHERE id = ?');
+            $stmt->execute([$prenom, $email, $hashedPassword, $id]);
 
-    //         $stmt = $this->pdo->prepare('UPDATE UserRoles SET role = ? WHERE user_id = ?');
-    //         $stmt->execute([$role, $id]);
+            $stmt = $this->pdo->prepare('UPDATE UserRoles SET role = ? WHERE user_id = ?');
+            $stmt->execute([$role, $id]);
 
-    //         return "Utilisateur mis à jour avec succès.";
-    //     } catch (PDOException $e) {
-    //         return "Erreur : " . $e->getMessage();
-    //     }
-    // }
+            return "Utilisateur mis à jour avec succès.";
+        } catch (PDOException $e) {
+            return "Erreur : " . $e->getMessage();
+        }
+    }
 
     public function getUserById($id) {
         $stmt = $this->pdo->prepare('SELECT user.*, userroles.role FROM user JOIN userroles ON user.id = userroles.user_id WHERE user.id = ?');
