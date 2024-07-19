@@ -1,9 +1,14 @@
 <?php
 ob_start();
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+
+require_once '../entities/Auth.class.php';
+require_once '../entities/User.class.php';
+require_once '../entities/Equipes.class.php';
+
 $titre = "ÉQUIPES";
+
+$equipes = Equipe::afficherEquipe();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,42 +23,22 @@ $titre = "ÉQUIPES";
 
 <body>
 
-    <div class="div-card">
-        <h3></h3>
-    </div>
-    <div class="div-card">
+    <section class="section-cards">
 
-    </div>
-    <div class="div-card">
+        <?php foreach ($equipes as $equipe) : ?>
 
-    </div>
-    <div class="div-card">
+            <div class="div-card">
+                <h4><?php echo htmlspecialchars($equipe->getPays()); ?></h4>
+                <div class="div-img">
+                    <img class="img-flag" src="/public/Assets/Images/Flags/<?php echo htmlspecialchars($equipe->getFlag()); ?>" alt="Image de <?php echo htmlspecialchars($equipe->getPays()) ?>">
+                </div>
 
-    </div>
-    <div class="div-card">
+                <span><a class="a-equipes" href="">Voir plus</a></span>
+            </div>
 
-    </div>
-    <div class="div-card">
+        <?php endforeach ?>
 
-    </div>
-    <div class="div-card">
-
-    </div>
-    <div class="div-card">
-
-    </div>
-    <div class="div-card">
-
-    </div>
-    <div class="div-card">
-
-    </div>
-    <div class="div-card">
-
-    </div>
-    <div class="div-card">
-
-    </div>
+    </section>
 
 </body>
 

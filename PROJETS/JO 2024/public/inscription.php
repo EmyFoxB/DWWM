@@ -1,5 +1,28 @@
 <?php
 ob_start();
+require_once '../dbConnect/MyDbConnection.php';
+require_once '../entities/Auth.class.php';
+require_once '../entities/User.class.php';
+
+$auth = new Auth();
+$auth->startSession();
+
+if (isset($_POST['prenom'], $_POST['email'], $_POST['password'])) {
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $user = new User();
+
+    $message = $user->createUser($prenom, $email, $password);
+    $_SESSION['successMessage'] = $message;
+    header("Location:login.php");
+    exit();
+
+} else {
+    echo "Tous les champs doivent être remplis.";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,20 +41,17 @@ ob_start();
 
         <form class="inscription-form" action="" method="POST">
 
-            <input type="text" name="prenom" value="Prénom" required><br>
+            <input type="text" name="prenom" placeholder="Prénom" required><br>
 
-            <input type="email" name="email" value="Email" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
 
-            <input type="password" name="password" value="Mot de passe" required><br>
-            <label for="role">Rôle:</label>
-            <select name="role" required>
-                <option value="non-admin">Non-Admin</option>
-            </select><br><br>
+            <input type="password" name="password" placeholder="Mot de passe" required><br>
+            <br><br>
             <input class="btn-inscription" type="submit" value="S'inscrire">
             <br>
         </form>
-            <p class="p-compte">Déjà inscrit ? <a href="/public/login.php">Connectez-vous !</a></p>
-        </div>
+        <p class="p-compte">Déjà inscrit ? <a href="/public/login.php">Connectez-vous !</a></p>
+    </div>
 </body>
 
 <?php

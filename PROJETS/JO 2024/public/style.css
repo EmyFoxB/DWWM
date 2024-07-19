@@ -6,7 +6,7 @@
 
 /* TEMPLATE */
 
-.body-template {
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -15,9 +15,10 @@
     background-image: url(./Assets/Images/bg-equipes.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
 }
 
-.header-template {
+header {
     width: 100vw;
 }
 
@@ -60,6 +61,7 @@ h1 {
 
 footer {
     background-color: black;
+    width: 100vw;
     height: 8vh;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -72,6 +74,7 @@ footer {
 
 .accueil {
     margin-bottom: 15vh;
+    width: 100vw;
 }
 
 h2 {
@@ -85,7 +88,7 @@ h2 {
 
 .p-accueil {
     margin-left: 10%;
-    font-family: "Bodoni Moda SC", serif;
+    font-family: "IBM Plex Serif", serif;
     color: white;
     font-size: 1.2rem;
     text-shadow: 5px 4px 5px rgb(0 0 0);
@@ -121,6 +124,15 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+input{
+    width: 70%;
+    height: 30%;
+    padding-left: 2%;
+    border-radius: 10px;
 }
 
 .btn-login{
@@ -128,6 +140,10 @@ h2 {
     color: #000000;
     border: none;
     width: 50%;
+}
+
+.error{
+    color: red;
 }
 
 /* INSCRIPTION */
@@ -153,6 +169,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    height: 80%;
 }
 
 .btn-inscription{
@@ -162,6 +180,23 @@ h2 {
     width: 50%;
 }
 
+.login-container{
+    background-color: rgba(255, 143, 12, 0.7);
+    border: solid 2px #FF8F0C;
+    height: 10%;
+    width: 30%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
 /* HISTOIRE ET REGLES */
 
 .histoire-et-regles{
@@ -169,7 +204,7 @@ h2 {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    height: 50vh;
+    gap: 15px;
     justify-content: space-evenly;
 }
 
@@ -186,7 +221,7 @@ h2 {
 h3{
     padding-top: 2%;
     padding-bottom: 2%;
-    font-family: "Bodoni Moda SC", serif;
+    font-family: "IBM Plex Serif", serif;
     color: #FF8F0C;
     letter-spacing: 0.2rem;
 }
@@ -197,4 +232,90 @@ h3{
     padding-right: 2%;
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+
+/* EQUIPES */
+
+.section-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-card{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border: solid 1px white;
+    border-radius: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: white;
+    background-color: rgba(255, 143, 12, 0.7);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    background-color: rgba(255, 143, 12, 0.7);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.a-equipes{
+    font-family: "IBM Plex Serif", serif;
+    font-size: 0.8rem;
+}
+
+.div-img{
+    display: flex;
+    justify-content: center;
+}
+
+.img-flag{
+    width: 60px;
+    height: 60px;
+}
+
+/* MATCHS */
+
+table{
+    width: 80vw;
+    border: solid 2px #FF8F0C;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+th{
+    border: solid 2px #FF8F0C;
+    font-family: 'Roboto', sans-serif;
+    color: #FF8F0C;
+    text-align: center;
+    padding: 1%;
+}
+
+td{
+    border: solid 1px #ff8e0c81;
+    font-family: 'IBM Plex Serif', serif;
+    color: rgb(207, 207, 207);
+    text-align: center;
+    
 }

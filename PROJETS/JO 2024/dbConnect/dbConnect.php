@@ -46,5 +46,6 @@ abstract class DbConnect {
         }
         return self::$instance->pdo;
     }
+
 }
 ?>

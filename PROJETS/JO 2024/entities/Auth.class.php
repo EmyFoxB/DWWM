@@ -19,7 +19,7 @@ class Auth {
         $stmt = $this->pdo->prepare('SELECT role FROM UserRoles WHERE user_id = ?');
         $stmt->execute([$userId]);
         $userRole = $stmt->fetch();
-        return $userRole && $userRole['role'] === 'admin';
+        return $userRole && $userRole['role'] === 'Admin';
     }
 
     public function verifierAdmin() {
