@@ -26,7 +26,6 @@ nav {
     width: 100%;
     height: 8vh;
     background-color: black;
-    opacity: 70%;
     align-content: center;
 }
 
@@ -37,9 +36,10 @@ ul {
     flex-direction: row;
 }
 
-a {
+.a-template {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    font-size: 1rem;
+    color: rgb(148, 141, 141);
     text-decoration: none;
 }
 
@@ -47,7 +47,6 @@ h1 {
     width: 100%;
     height: 12vh;
     background-color: black;
-    opacity: 70%;
     align-content: center;
     color: #FF8F0C;
     font-family: 'Roboto', sans-serif;
@@ -90,7 +89,7 @@ h2 {
     margin-left: 10%;
     font-family: "IBM Plex Serif", serif;
     color: white;
-    font-size: 1.2rem;
+    font-size: 2rem;
     text-shadow: 5px 4px 5px rgb(0 0 0);
     letter-spacing: 0.2rem;
     text-decoration: overline;
@@ -117,6 +116,7 @@ h2 {
 .p-compte{
     color: white;
     font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
 }
 
 .login-form{
@@ -132,7 +132,7 @@ input{
     width: 70%;
     height: 30%;
     padding-left: 2%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .btn-login{
@@ -140,6 +140,14 @@ input{
     color: #000000;
     border: none;
     width: 50%;
+}
+
+.btn-login:hover{
+    text-decoration: underline;
+}
+
+.a-login{
+    color: white;
 }
 
 .error{
@@ -178,6 +186,10 @@ input{
     color: #000000;
     border: none;
     width: 50%;
+}
+
+.btn-inscription:hover{
+    text-decoration: underline;
 }
 
 .success{
@@ -219,6 +231,7 @@ h3{
     padding-top: 2%;
     padding-bottom: 2%;
     font-family: "IBM Plex Serif", serif;
+    font-size: 1rem;
     color: #FF8F0C;
     letter-spacing: 0.2rem;
 }
@@ -229,15 +242,54 @@ h3{
     padding-right: 2%;
     color: white;
     font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
 }
 
 /* EQUIPES */
 
+.form-equipes{
+    width: 100vw;
+    display: flex;
+}
+
+.div-in{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+label{
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #e4d0ba;
+    padding-right: 2%;
+}
+
+.in-equipes{
+    width: 70%;
+    height: 90%;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #FF8F0C;
+}
+
+.add-equipes{
+    width: 40%;
+    height: 100%;
+    background-color: #FF8F0C;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
 .section-cards{
+    height: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
 }
 
 .div-card{
@@ -280,6 +332,8 @@ span{
 .a-equipes{
     font-family: "IBM Plex Serif", serif;
     font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
 }
 
 .div-img{
@@ -292,10 +346,28 @@ span{
     height: 60px;
 }
 
+.span-equipes{
+    width: 30%;
+    height: 2%;
+    background: none;
+    margin: 1%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.a-modifier, .a-supprimer{
+    font-family: "IBM Plex Serif", serif;
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    border: solid 1px #FF8F0C;
+    padding: 1%;
+}
+
 /* MATCHS */
 
 table{
-    width: 80vw;
+    width: 70vw;
     border: solid 2px #FF8F0C;
     border-collapse: collapse;
     background-color: rgba(0, 0, 0, 0.7);
@@ -304,6 +376,7 @@ table{
 th{
     border: solid 2px #FF8F0C;
     font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
     color: #FF8F0C;
     text-align: center;
     padding: 1%;
@@ -312,7 +385,40 @@ th{
 td{
     border: solid 1px #ff8e0c81;
     font-family: 'IBM Plex Serif', serif;
+    font-size: 0.6rem;
     color: rgb(207, 207, 207);
     text-align: center;
-    
+    padding: 0.3%;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* MODAL */
+
+.div-modal{
+    /* display: none; */
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+}
+
+.h2-modal{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    background-color: rgba(255, 143, 12, 0.7);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px
+}
+
+.span-entraineur{
+    background-color: #000000;
+    color: white;
+}
+
+.tableau-joueurs{
+    width: 60%;
 }

@@ -19,14 +19,14 @@ if(session_status() == PHP_SESSION_NONE){
     <header>
         <nav>
             <ul>
-                <li><a href="../index.php">ACCUEIL</a></li>
-                <li><a href="/public/equipes.php">ÉQUIPES</a></li>
-                <li><a href="/public/matchs.php">MATCHS</a></li>
-                <li><a href="/public/histoire.php">HISTOIRE & RÈGLES</a></li>
+                <li><a class="a-template" href="../index.php">ACCUEIL</a></li>
+                <li><a class="a-template" href="/public/equipes.php">ÉQUIPES</a></li>
+                <li><a class="a-template" href="/public/matchs.php">MATCHS</a></li>
+                <li><a class="a-template" href="/public/histoire.php">HISTOIRE & RÈGLES</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="/public/logout.php">DÉCONNEXION</a></li>
+                    <li><a class="a-template" href="/public/logout.php">DÉCONNEXION</a></li>
                 <?php else: ?>
-                    <li><a href="/public/login.php">CONNEXION/INSCRIPTION</a></li>
+                    <li><a class="a-template" href="/public/login.php">CONNEXION/INSCRIPTION</a></li>
                 <?php endif; ?>
             </ul>
         </nav>

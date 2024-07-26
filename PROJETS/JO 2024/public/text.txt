@@ -1,0 +1,120 @@
+            
+
+
+
+                    <td><?php echo htmlspecialchars($equipe->getPrenom()); ?></td>
+                    <td><?php echo htmlspecialchars($equipe->getDdn()); ?></td>
+                    <td><?php echo htmlspecialchars($equipe->getPoste()); ?></td>
+
+
+
+                                <?php echo htmlspecialchars($equipe->getPays()) ?>
+            <span class="span-entraineur"><?php echo htmlspecialchars($equipe->getEntraineur()); ?></span>
+
+
+
+
+            <?php
+ob_start();
+
+require_once '../entities/Auth.class.php';
+require_once '../entities/User.class.php';
+require_once '../entities/Equipes.class.php';
+require_once '../entities/Joueurs.class.php';
+
+$titre = "ÉQUIPES";
+
+$equipes = Equipe::afficherEquipe();
+// echo $equipes;
+// $equipe = [];
+$joueur = new Joueur;
+$joueurs = $joueur->recupererJoueur();
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>ÉQUIPES</title>
+</head>
+
+<body>
+
+    <section class="section-cards">
+
+        <?php foreach ($equipes as $equipe) : ?>
+
+            <div class="div-card">
+                <h4><?php echo htmlspecialchars($equipe->getPays()); ?></h4>
+                <div class="div-img">
+                    <img class="img-flag" src="/public/Assets/Images/Flags/<?php echo htmlspecialchars($equipe->getFlag()); ?>" alt="Image de <?php echo htmlspecialchars($equipe->getPays()) ?>">
+                </div>
+
+                <span><a class="a-equipes" href="">Voir plus</a></span>
+
+            </div>
+
+        <?php endforeach ?>
+
+    </section>
+
+
+
+    <?php foreach ($joueurs as $joueur) : ?>
+        <div class="div-modal">
+
+            <table class="tableau-joueurs">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Poste</th>
+                </tr>
+                <?php foreach ($joueurs as $joueur) : ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($joueur->getNom()); ?></td>
+                    <td><?php echo htmlspecialchars($joueur->getPrenom()); ?></td>
+                    <td><?php echo htmlspecialchars($joueur->getDdn()); ?></td>
+                    <td><?php echo htmlspecialchars($joueur->getPoste()); ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+
+
+
+        </div>
+
+
+
+        <button class="close-btn">Fermer</button>
+        </div>
+    <?php endforeach ?>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<?php
+$content = ob_get_clean();
+require "template.php";
+?>
+
+
+
+
+
+INSERT INTO `equipes` (`id_equipe`, `pays`, `flag`, `id_classement`, `entraineur`) VALUES ('13', 'ccdf', 'pologne.png', '20', 'zffzf');
+
+
+
+
+
+TERMINER FORMULAIRE UPDATE

@@ -43,7 +43,7 @@ if (isset($_POST['email'], $_POST['password'])) {
         <input class="btn-login" type="submit" value="Se connecter">
     </form>
 
-    <p class="p-compte">Pas encore de compte ? <a href="/public/inscription.php">Inscrivez-vous !</a></p>
+    <p class="p-compte">Pas encore de compte ? <a class="a-login" href="/public/inscription.php">Inscrivez-vous !</a></p>
 </div>
 
 <?php

@@ -13,6 +13,7 @@ class Rencontre
 
     public function __construct($equipeA, $equipeB, $date, $heure, $score)
     {
+        $this->pdo = MyDbConnection::getInstance();
         $this->equipeA = $equipeA;
         $this->equipeB = $equipeB;
         $this->date = $date;
