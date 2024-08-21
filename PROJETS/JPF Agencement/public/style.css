@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Inria';
+    src: url(/public/Assets/Fonts/InriaSerif/InriaSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url(/public/Assets/Fonts/RobotoCondensed/RobotoCondensed-VariableFont_wght.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* TEMPLATE */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    width: 100vw;
+    height: 10%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.img-logo{
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+ul{
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.li-nav{
+    font-family: 'Inria', serif;
+}
+
+.a-nav{
+    color: #F6F6D2;
+    text-decoration: none;
+}
+
+.img-gradient{
+    width: 100vw;
+}
+
+.img-header{
+    width: 100vw;
+}
+
+h1{
+    align-self: center;
+    width: 20%;
+    margin: 2%;
+    font-family: 'Inria', serif;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-align: center;
+    display: inline-block;
+    background: linear-gradient(to left, rgb(195,163,81), rgb(255, 255, 255), rgb(195,163,81));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer{
+    width: 100vw;
+    height: 10%;
+    display: flex;
+}
